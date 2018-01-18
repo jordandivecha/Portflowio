@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import ReactFilestack, {client} from 'filestack-react';
+import Filestack from './components/Filestack';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">OH HEY DERE LET'S BUILD AN APP 🤩😘</h1>
-        </header>
-      </div>
+      <Filestack />
     );
   }
 }
