@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 // Mongo
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nytarticles",
+  process.env.MONGODB_URI || "mongodb://localhost/portflowio",
   {
     useMongoClient: true
   }
