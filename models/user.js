@@ -16,7 +16,7 @@ const userSchema = new Schema({
   saved: [{}],
   posts: [{}],
   date: { type: Date, default: Date.now }
-  
+
 }, { _id: false });
 
 const Article = mongoose.model("User", userSchema);
