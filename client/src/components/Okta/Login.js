@@ -34,7 +34,7 @@ export default withAuth(class Login extends Component {
 
   onError(err) {
     console.log('error logging in', err);
-    console.log(this.props.redirect_uri);
+    
   }
 
   render() {

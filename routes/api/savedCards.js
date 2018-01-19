@@ -2,7 +2,7 @@ const router = require("express").Router();
 const cardController = require("../../controllers/cardController");
 
 
-// default route 
+// default route
 
 router.route("/")
 	.get(cardController.findAll)
@@ -14,6 +14,7 @@ router.route("/:user")
 	.delete(cardController.remove)
 
 router.route("/user/id")
+.post (userController.create);
 
 router.route("/user/saved/id")
 
