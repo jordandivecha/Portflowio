@@ -7,10 +7,7 @@ import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import Home from './components/Okta/Home.js';
 import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
-import './App.css';
-import feed from './pages/feed';
-import User from './pages/User';
-import Nav from "./components/Nav";
+
 
 function onAuthRequired({history}) {
   history.push('/login');
@@ -46,10 +43,6 @@ class App extends Component {
   }
 }
 
-// <Switch>
-//   <Route exact path="/" component={feed} />
-//   <Route exact path="/feed" component={feed} />
-//   <Route exact path="/User/:id" component={User} />
-// </Switch>
+
 
 export default App;
