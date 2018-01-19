@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import ReactFilestack, {client} from 'filestack-react';
-import Filestack from './components/Filestack';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import feed from './pages/feed';
+import User from './pages/User';
+import Nav from "./components/Nav";
 
-class App extends Component {
-  render() {
-    return (
-      <Filestack />
-    );
-  }
-}
+
+const App = () =>
+
+      <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={feed} />
+          <Route exact path="/feed" component={feed} />
+          <Route exact path="/User/:id" component={User} />
+        </Switch>
+      </div>
+    </Router>;
+
 
 export default App;
