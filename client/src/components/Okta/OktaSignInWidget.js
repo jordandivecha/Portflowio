@@ -12,18 +12,26 @@ export default class OktaSignInWidget extends Component {
       baseUrl: this.props.baseUrl,
       clientId: '0oadot4zoxzmT4EZh0h7',
       redirectUri: redirect_uri,
+
       idps: [
         {type: 'GOOGLE', id: '0oadowjhgzcK6qDAv0h7'},
         {type: 'FACEBOOK', id: '0oadowb5b3luZXZw30h7'},
         {type: 'LINKEDIN', id: '0oadow4ig0UmFH0LT0h7'}
-],
+        ],
 
-authParams: {
-  display: 'page',
-  responseType: 'token'
-}
+        authParams: {
+            display: 'page',
+              responseType: 'token',
+                scope: [
+                    'openid',
+                      'email',
+                      'profile',
+                      'groups'
+                    ]
+                  }
 
-    });
+	});
+
     this.widget.renderEl({el}, this.props.onSuccess, this.props.onError);
   }
 
