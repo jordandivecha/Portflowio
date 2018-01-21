@@ -1,5 +1,7 @@
 const db = require("../models");
 
+
+
 // Methods for cardController
 
 module.exports = {

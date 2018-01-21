@@ -4,7 +4,7 @@ import Filestack from '../Filestack/Filestack';
 
 
 const Form = props => (
-  <div className="form">
+  <div className="form col-md-4">
     <form>
     <div class="form-inline">
       <div class="col-md-4 mb-3">
