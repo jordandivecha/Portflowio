@@ -7,6 +7,7 @@ import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import Home from './components/Okta/Home.js';
 import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
+import Form from './components/Form/Form.js';
 
 
 function onAuthRequired({history}) {
@@ -36,7 +37,6 @@ class App extends Component {
              <SecureRoute path='/protected' component={Protected} />
 
            <Route path='/implicit/callback' component={ImplicitCallback} />
-
            </Security>
       </Router>
     );

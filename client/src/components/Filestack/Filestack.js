@@ -14,14 +14,16 @@ makeImage =(result) => {
   render(){
     return(
 <div>
+  <img id="profileImageUpload" src = {this.state.image}/>
+
   <ReactFilestack
     apikey="AdP2fF1FvRdGW4RWCKw8sz"
-    buttonText="Click me"
+    buttonText="Upload Image"
     buttonClass="classname"
     options=""
     onSuccess={this.makeImage}
   />
-  <img src = {this.state.image}/>
+
 </div>
 
 );
