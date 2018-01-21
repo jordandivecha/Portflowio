@@ -26,8 +26,6 @@ mongoose.connect(
     useMongoClient: true
   }
 
-
-
 );
 
 // Start the API server
