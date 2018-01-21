@@ -4,7 +4,7 @@ import ReactFilestack, {client} from 'filestack-react';
 import Filestack from './components/Filestack';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
-import Home from './components/Okta/Home.js';
+import Land from './components/Okta/Land.js';
 import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
@@ -32,7 +32,7 @@ class App extends Component {
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
-           <Route path='/' exact={true} component={Home} />
+           <Route path='/' exact={true} component={Land} />
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
              <SecureRoute path='/protected' component={Protected} />
 
