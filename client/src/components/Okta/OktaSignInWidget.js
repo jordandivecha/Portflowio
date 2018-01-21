@@ -34,6 +34,7 @@ export default class OktaSignInWidget extends Component {
                       'profile'
                     ]
                   },
+            logo: 'https://i.imgur.com/tjOnmtW.png',
 
       registration: {
             click: function() {
@@ -44,7 +45,7 @@ export default class OktaSignInWidget extends Component {
            onSuccess(schema);
         },
         preSubmit: function (postData, onSuccess, onFailure) {
-          
+
            onSuccess(postData);
         },
         postSubmit: function (response, onSuccess, onFailure) {
