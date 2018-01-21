@@ -18,19 +18,48 @@ export default class OktaSignInWidget extends Component {
         {type: 'FACEBOOK', id: '0oadowb5b3luZXZw30h7'},
         {type: 'LINKEDIN', id: '0oadow4ig0UmFH0LT0h7'}
         ],
-
-        authParams: {
+        idpDisplay: 'PRIMARY',
+      i18n: {
+  // Overriding English properties
+        'en': {
+          'primaryauth.title': 'Sign in to Portflow.io',
+            'primaryauth.username.placeholder': 'Portflow.io Username'
+          }},
+      authParams: {
             display: 'page',
-              responseType: 'token',
-                scope: [
+            responseType: ['id_token', 'token'],
+            scope: [
                     'openid',
                       'email',
-                      'profile',
-                      'groups'
+                      'profile'
                     ]
-                  }
+                  },
 
-	});
+      registration: {
+            click: function() {
+              window.location.href = window.location.origin +'/signup';
+            },
+        parseSchema: function(schema, onSuccess, onFailure) {
+           // handle parseSchema callback
+           onSuccess(schema);
+        },
+        preSubmit: function (postData, onSuccess, onFailure) {
+          
+           onSuccess(postData);
+        },
+        postSubmit: function (response, onSuccess, onFailure) {
+            // handle postsubmit callback
+           onSuccess(response);
+        }
+      },
+      features: {
+        // Used to enable registration feature on the widget.
+        // https://github.com/okta/okta-signin-widget#feature-flags
+         registration: true // REQUIRED
+      }
+
+           }
+         );
 
     this.widget.renderEl({el}, this.props.onSuccess, this.props.onError);
   }
