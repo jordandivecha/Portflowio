@@ -46,10 +46,13 @@ class App extends Component {
                     >
             <Route path='/' component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
+
              <SecureRoute path='/protected' component={Protected}/>
              <SecureRoute path='/profile' component={Profile}/>
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
+
+   
          </div>
        </Router>
     );
