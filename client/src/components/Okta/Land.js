@@ -84,7 +84,7 @@ this.getUserInfo();
           auth= {false}
           authlogin = {this.props.auth.login}/>
 
-        <button type="button" className="btn btn-info" onClick={this.props.auth.login}>Login</button>
+      
 
 
   </div>);
