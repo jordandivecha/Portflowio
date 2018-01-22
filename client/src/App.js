@@ -50,7 +50,8 @@ class App extends Component {
              <SecureRoute path='/profile' component={Profile} />
 
            <Route path='/implicit/callback' component={ImplicitCallback} />
-           </Security>
+         </Security>
+           
          </div>
       </Router>
     );
