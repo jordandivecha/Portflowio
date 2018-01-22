@@ -9,11 +9,8 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     <!__HALLO HALAAFHE-->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <script src="https://static.filestackapi.com/v3/filestack.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -36,58 +33,6 @@
       You need to enable JavaScript to run this app.
     </noscript>
 
-    <script>
-
-    
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //this is the jquery needed for our Yashtag Chips
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    $('.chips').material_chip();
-      $('.chips-initial').material_chip({
-        data: [{
-          tag: 'Apple',
-        }, {
-          tag: 'Microsoft',
-        }, {
-          tag: 'Google',
-        }],
-      });
-      $('.chips-placeholder').material_chip({
-        placeholder: 'Enter a yashtag',
-        secondaryPlaceholder: '+Tag',
-      });
-      $('.chips-autocomplete').material_chip({
-        autocompleteOptions: {
-          data: {
-            'Apple': null,
-            'Microsoft': null,
-            'Google': null
-          },
-          limit: Infinity,
-          minLength: 1
-        }
-      });
-      $('.chips').on('chip.add', function(e, chip){
-        // you have the added chip here
-        //not sure if these need more code. the website didn't have any.
-      });
-
-      $('.chips').on('chip.delete', function(e, chip){
-        // you have the deleted chip here
-      });
-
-      $('.chips').on('chip.select', function(e, chip){
-        // you have the selected chip here
-      });
-      //i believe the below script allows us to access data that might be associated with the chip.
-      $('.chips-initial').material_chip('data');
-    });
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  // i think the above is all the jquery needed to use chips
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    </script>
-
     <div id="root"></div>
 
 
@@ -102,19 +47,14 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
+    <script src="https://static.filestackapi.com/v3/filestack.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>
 
-
-
-
-
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/428e202272.js"></script>
 
   </body>
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-  <script src="https://use.fontawesome.com/428e202272.js"></script>
 
 </html>
