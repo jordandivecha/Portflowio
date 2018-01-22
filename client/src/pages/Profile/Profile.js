@@ -2,9 +2,10 @@
 import "./Profile.css";
 import React from  "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import SideNav from "../../components/SideNav";
-import axios from "axios";
 
+import axios from "axios";
+import SideNavBar from "../../components/SideNavBar";
+import Modal from "../../components/Modal";
 class Profile extends React.Component{
   constructor(props){
 
@@ -48,11 +49,12 @@ axios.get ('https://dev-395184.oktapreview.com/oauth2/v1/userinfo',
   render(){
     return(
       <div>
-        <SideNav
+        <SideNavBar
           firstName={this.state.firstName}
           lastName={this.state.lastName}
           email={this.state.email}
         />
+      <Modal/>
     </div>
       )
 

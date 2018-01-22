@@ -34,9 +34,9 @@
     babel-runtime "^6.26.0"
     prop-types "^15.5.10"
 
-"@okta/okta-signin-widget@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@okta/okta-signin-widget/-/okta-signin-widget-2.5.0.tgz#6164db2a5ecd0635c7e3e064b5ce7e634ad48644"
+"@okta/okta-signin-widget@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@okta/okta-signin-widget/-/okta-signin-widget-2.6.0.tgz#5b567f07857c26119902eaa84c27f0a4012a1265"
   dependencies:
     "@okta/okta-auth-js" "1.11.0"
     babel-polyfill "^6.23.0"
@@ -500,6 +500,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -861,8 +865,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 encodeurl@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
 
 encoding@^0.1.11:
   version "0.1.12"
@@ -1158,8 +1162,8 @@ find-up@^2.0.0:
     locate-path "^2.0.0"
 
 follow-redirects@^1.2.5:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.3.0.tgz#f684871fc116d2e329fda55ef67687f4fabc905c"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.4.0.tgz#a146a3a5d402201c7a3e6128643f0e336d212b10"
   dependencies:
     debug "^3.1.0"
 
@@ -1380,8 +1384,8 @@ got@^6.7.1:
     url-parse-lax "^1.0.0"
 
 got@^8.0.0:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/got/-/got-8.0.2.tgz#94d2054767875df4d5eb330f703c63881fc9cd64"
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/got/-/got-8.0.3.tgz#15d038e8101f89e93585d1639d9c49e8a55ae6bc"
   dependencies:
     "@sindresorhus/is" "^0.7.0"
     cacheable-request "^2.1.1"
@@ -1874,6 +1878,10 @@ jquery@1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-1.12.1.tgz#9cc34ce4780d4ceb90c44328f071064f01960c18"
 
+jquery@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+
 js-beautify@^1.7.4:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.7.5.tgz#69d9651ef60dbb649f65527b53674950138a7919"
@@ -2113,7 +2121,7 @@ longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
 
-loose-envify@^1.0.0, loose-envify@^1.3.1:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
   dependencies:
@@ -2555,8 +2563,8 @@ once@1.x, once@^1.3.0, once@^1.3.3:
     wrappy "1"
 
 openid-client@^1.12.0:
-  version "1.19.2"
-  resolved "https://registry.yarnpkg.com/openid-client/-/openid-client-1.19.2.tgz#282ca044a986a62fa859f96e834ffe59dc00321e"
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/openid-client/-/openid-client-1.19.3.tgz#8826fd3e730ec5a4c9c236996b922fe732ffc006"
   dependencies:
     base64url "^2.0.0"
     create-error-class "^3.0.2"
@@ -2780,7 +2788,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10:
+prop-types@^15.5.10, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -2868,6 +2876,32 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-dom@^16.0.0:
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
+react-materialize@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-materialize/-/react-materialize-1.1.2.tgz#f6a4872c224ac9c9718ff49c77786382484cc1cb"
+  dependencies:
+    classnames "^2.2.5"
+    react "^16.0.0"
+    react-dom "^16.0.0"
+
+react@^16.0.0:
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -3112,7 +3146,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
+"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -3148,8 +3182,8 @@ sequelize-cli@^3.2.0:
     yargs "^8.0.2"
 
 sequelize@^4.31.2:
-  version "4.31.2"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.31.2.tgz#4b414c39bac18ae74946ed49b300f5bc7e423462"
+  version "4.32.1"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.32.1.tgz#6761d0af31e2fa9ea61081a8b0f6a0c56dcec2a0"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -3162,10 +3196,10 @@ sequelize@^4.31.2:
     moment "^2.13.0"
     moment-timezone "^0.5.4"
     retry-as-promised "^2.3.1"
-    semver "^5.0.1"
+    semver "^5.5.0"
     terraformer-wkt-parser "^1.1.2"
     toposort-class "^1.0.1"
-    uuid "^3.0.0"
+    uuid "^3.2.1"
     validator "^9.1.0"
     wkx "^0.4.1"
 
@@ -3787,7 +3821,7 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
 
-uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
+uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0, uuid@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 

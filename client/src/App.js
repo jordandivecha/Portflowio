@@ -34,7 +34,7 @@ class App extends Component {
         <div>
           <ul>
             <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
-            <Link to = "/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
+            <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
 
 
           </ul>
@@ -44,16 +44,17 @@ class App extends Component {
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
-           <Route path='/' component={Home} />
+            <Route path='/' component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
-             <SecureRoute path='/protected' component={Protected} />
-             <SecureRoute path='/profile' component={Profile} />
 
-           <Route path='/implicit/callback' component={ImplicitCallback} />
-         </Security>
-           
+             <SecureRoute path='/protected' component={Protected}/>
+             <SecureRoute path='/profile' component={Profile}/>
+           <Route path='/implicit/callback' component={ImplicitCallback}/>
+           </Security>
+
+   
          </div>
-      </Router>
+       </Router>
     );
   }
 }
