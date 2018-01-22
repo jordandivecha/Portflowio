@@ -1,16 +1,7 @@
 var mongoose = require ('mongoose');
-Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-mongoose.Promise = global.Promise;
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/portflowio",
-  {
-    useMongoClient: true
-  }
-
-);
-
-var userSchema = new Schema({
+const userSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     username: { type: String, required: false },
@@ -25,9 +16,7 @@ var userSchema = new Schema({
     posts: [{}],
     date: { type: Date, default: Date.now }
 
-  },
-	{
-		collection: 'User',
-	}
-);
+  });
 const User = mongoose.model("User", userSchema);
+
+module.exports = User;

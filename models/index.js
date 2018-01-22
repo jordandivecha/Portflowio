@@ -1,1 +1,3 @@
-//m
+module.exports = {
+  User: require('./user')
+};
