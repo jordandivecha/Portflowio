@@ -4,8 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8080;
-// const OktaJwtVerifier = require('@okta/jwt-verifier');
-// var cors = require('cors');
+
 
 // Body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,6 +26,7 @@ mongoose.connect(
   }
 
 );
+
 
 // Start the API server
 app.listen(PORT, () =>
