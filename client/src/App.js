@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import ReactFilestack, {client} from 'filestack-react';
 import Filestack from './components/Filestack';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
-import Land from './components/Okta/Land.js';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
@@ -23,21 +24,34 @@ const config = {
 };
 
 class App extends Component {
+
+
+
   render() {
     return (
       <Router>
+        <div>
+        <div>
+          <ul>
+            <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
+            <Link to = "/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
 
+
+          </ul>
+        </div>
         <Security issuer= {config.issuer}
                    client_id= {config.client_id}
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
-           <Route path='/' exact={true} component={Land} />
+           <Route path='/' component={Home} />
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
              <SecureRoute path='/protected' component={Protected} />
+             <SecureRoute path='/profile' component={Profile} />
 
            <Route path='/implicit/callback' component={ImplicitCallback} />
            </Security>
+         </div>
       </Router>
     );
   }
