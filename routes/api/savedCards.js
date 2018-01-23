@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const cardController = require("../../controllers/cardController");
+const postController = require("../../controllers/postController");
 
 
 
 router.route("/")
-	.get(cardController.findAll)
-	.post(cardController.create);
+	.get(postController.findAll)
+	.post(postController.create);
 
 // router.route("/:user")
 // 	.get(cardController.findById)
