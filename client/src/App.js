@@ -10,8 +10,9 @@ import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
-import Footer from './components/Footer/Footer.js';
-import ModalElement from './components/Modal/Modal.js';
+import FooterElement from './components/Footer/Footer.js';
+
+
 
 
 function onAuthRequired({history}) {
@@ -39,7 +40,7 @@ class App extends Component {
           <ul className= "right">
             <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
             <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
-            <ModalElement/>
+
 
           </ul>
         </div>
@@ -56,7 +57,7 @@ class App extends Component {
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
 
-           <Footer/>
+           <FooterElement/>
          </div>
 
        </Router>

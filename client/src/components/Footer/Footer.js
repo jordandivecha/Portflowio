@@ -1,8 +1,9 @@
 import React from "react";
 import "./Footer.css";
+import {Footer} from "react-materialize";
 
-const Footer = () => (
+const FooterElement = () => (
 	<Footer copyrights="Portflowio © 2018" className="footer" />
 );
 
-export default Footer;
+export default FooterElement;

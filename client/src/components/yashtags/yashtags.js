@@ -27,7 +27,7 @@ class Yash extends React.Component {
         		value={this.state.yashtag}
         		name="q"
         		onChange={this.handleInputChange}
-						onSubmit={(event)=>(event.preventDefault)}
+						
         	/>
         	<Tag>{this.state.yashtag}</Tag>
     	</div>
