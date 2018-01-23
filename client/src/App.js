@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
+import Header from './components/Header/Header.js';
 
 
 function onAuthRequired({history}) {
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Header/>
         <div>
           <ul>
             <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
@@ -52,7 +54,7 @@ class App extends Component {
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
 
-   
+
          </div>
        </Router>
     );

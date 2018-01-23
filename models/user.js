@@ -12,8 +12,10 @@ const userSchema = new Schema({
     linkedin: {type: String, required:false},
     website: {type: String, required: false},
     email: {type: String, required: true},
-    saved: [{}],
-    posts: [{}],
+    followers: [{Schema.Types.ObjectId, ref: 'User'}],
+    following: [{Schema.Types.ObjectId, ref: 'User'}],
+    likes: [{Schema.Types.ObjectId, ref:'Post'}],
+    posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
     date: { type: Date, default: Date.now }
 
   });
