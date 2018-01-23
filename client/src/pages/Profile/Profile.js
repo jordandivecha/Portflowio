@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from "axios";
 import SideNavBar from "../../components/SideNavBar";
 import Modal from "../../components/Modal";
+import Form from "../../components/Form";
 class Profile extends React.Component{
   constructor(props){
 
@@ -55,6 +56,7 @@ axios.get ('https://dev-395184.oktapreview.com/oauth2/v1/userinfo',
           email={this.state.email}
         />
       <Modal/>
+      <Form/>
     </div>
       )
 
