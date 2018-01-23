@@ -1,19 +1,20 @@
 import React from "react";
-import "./ModalPost.css";
+import "./ModalProfile.css";
 
 import {Button, Modal, Row, Input} from "react-materialize";
 import Filestack from "../Filestack";
 import Yash from "../yashtags";
+import Form from "../Form";
 
-class ModalPost extends React.Component {
+class ModalProfile extends React.Component {
 constructor(props){
 super (props);
 }
   render(){
     return(
   <div>
-    <Modal id = "Popout"
-    	header= 'Tell your followers about your project.'
+    <Modal id = "Popout1"
+    	header= 'Update Your Profile'
     	trigger={<Button>Edit Profile</Button>}>
       <Form/>
     </Modal>
@@ -22,4 +23,4 @@ super (props);
 );
 }
 }
-export default ModalPost;
+export default ModalProfile;
