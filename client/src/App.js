@@ -16,6 +16,7 @@ import ModalPost from './components/Modal/ModalPost.js'
 
 
 
+
 function onAuthRequired({history}) {
   history.push('/login');
 }
@@ -43,16 +44,21 @@ class App extends Component {
             <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
             <ModalPost/>
 
-          </ul>
-        </div>
-        <Security issuer= {config.issuer}
+        <Security  issuer= {config.issuer}
                    client_id= {config.client_id}
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
+                    <div>
+                      <ul className= "right">
+                        <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
+                        <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
+                        
+
+                      </ul>
+                    </div>
             <Route path='/' component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
-
              <SecureRoute path='/protected' component={Protected}/>
              <SecureRoute path='/profile' component={Profile}/>
            <Route path='/implicit/callback' component={ImplicitCallback}/>
