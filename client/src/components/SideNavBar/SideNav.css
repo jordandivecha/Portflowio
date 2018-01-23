@@ -1,4 +1,9 @@
 /*  */
-.side-nav{
+.side-nav {
   float: right !important;
+  transform: translateX(0%);
+  width: 15%;
+  text-align: center;
 }
+
+

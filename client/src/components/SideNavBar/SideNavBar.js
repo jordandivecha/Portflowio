@@ -1,5 +1,7 @@
 // Static Sidenav
 
+import "./SideNav.css";
+
 import React from "react";
 import {SideNav, Button, SideNavItem} from "react-materialize";
 
@@ -30,11 +32,11 @@ class SideNavBar extends React.Component {
 					}}
 					/>
 
-				<SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
+				<SideNavItem href='#!icon'>First Link</SideNavItem>
 				<SideNavItem href='mailto:{this.props.email}'>Second Link</SideNavItem>
 				<SideNavItem divider />
 				<SideNavItem subheader>Subheader</SideNavItem>
-				<SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
+				<SideNavItem waves href='#!third'>Third Link</SideNavItem>
 			</SideNav>
 
 );
