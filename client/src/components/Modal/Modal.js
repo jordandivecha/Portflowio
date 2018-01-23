@@ -21,7 +21,7 @@ super (props);
       <Input placeholder="Description" s={6} label="Description" />
       </Row>
       <Yash/>
-      <Filestack /><Button type="submit" name="btn" value="Submit" id="submitBtn" className="btn btn-default" data-confirm="Are you sure you want to submit?" >Submit</Button>
+      <Filestack /><Button name="btn" id="submitBtn" className="btn btn-default" data-confirm="Are you sure you want to submit?" >Submit</Button>
     </Modal>
 
 </div>
