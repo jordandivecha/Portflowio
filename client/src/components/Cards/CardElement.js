@@ -5,21 +5,16 @@
 
 import React from "react";
 import "./CardElement.css";
+import {Card, CardTitle} from "react-materialize";
 
 const PortflowioCard = props => (
-
-	<div className="card">
-	  <div className="img-container">
-	    <img class="materialboxed" alt = {} width="650" src={} />
-	  </div>
-	  <div className="content">
-	    
-	  </div>
-	  <span onClick={() => } className="remove">
-	    𝘅
-	  </span>
-	</div>
-
+	<Card className='small'
+		header={<CardTitle image={props.postImage}>{props.title}</CardTitle>}
+		actions={[<a href={props.link1}>Website</a>
+		<a href={props.link2}>Project</a>]}>
+		Created by {props.creator} {props.profileLink}
+		Description: {props.description}
+	</Card>
 	);
 
 export default PortflowioCard;
