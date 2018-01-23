@@ -1,32 +1,31 @@
 import React from "react";
 import "./Modal.css";
 
-const Modal = () => (
+import {Button, Modal, Row, Input} from "react-materialize";
+import Filestack from "../Filestack";
+import Yash from "../yashtags";
+
+class ModalElement extends React.Component {
+constructor(props){
+super (props);
+}
+  render(){
+    return(
   <div>
+    <Modal
+    	header= 'Tell your followers about your project.'
+    	trigger={<Button>Post</Button>}>
+      <Row>
+  		<Input placeholder="Title" s={6} label="Title" />
+      <Input placeholder="Link" s={6} label="Link" />
+      <Input placeholder="Description" s={6} label="Description" />
+      </Row>
+      <Yash/>
+      <Filestack /><Button type="submit" name="btn" value="Submit" id="submitBtn" className="btn btn-default" data-confirm="Are you sure you want to submit?" >Submit</Button>
+    </Modal>
 
-	<Button floating large className='blue' waves='light' icon='add' onClick={() => {
-		$('#post').modal('open')
-	}}>Post</Button>
-
-	<Modal
-		id='post'
-		header= 'Tell your followers about your project.'>
-
-    <Row>
-		<Input placeholder="Title" s={6} label="Title" />
-    <Input placeholder="Description" s={6} label="Description" />
-    <Input placeholder="Link" s={6} label="Link" />
-    </Row>
-
-    <Filestack />
-
-    <input type="submit" name="btn" value="Submit" id="submitBtn" class="btn btn-default" data-confirm="Are you sure you want to submit?"/>
-
-    <Button type="submit" name="btn" value="Submit" id="submitBtn" class="btn btn-default" data-confirm="Are you sure you want to submit?" />
-
-	</Modal>
-
-</div>;
+</div>
 );
-
-export default Modal;
+}
+}
+export default ModalElement;
