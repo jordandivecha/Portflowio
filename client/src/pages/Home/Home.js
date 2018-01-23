@@ -62,10 +62,10 @@ this.getUserInfo();
   button() {
     if (this.state.authenticated){
     return(
-      <button type="button" className="btn btn-info" onClick={this.props.auth.logout}>Logout</button>);
+      <button type="button" className="btn btn-info right" onClick={this.props.auth.logout}>Logout</button>);
     }
     else{
-      return(<button type="button" className="btn btn-info" onClick={this.props.auth.login}>Login</button>);
+      return(<button type="button" className="btn btn-info right" onClick={this.props.auth.login}>Login</button>);
 
     }
   }
