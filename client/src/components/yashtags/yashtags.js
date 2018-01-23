@@ -4,7 +4,7 @@ import React from "react";
 import "./yashtags.css";
 import {Chip, Tag, Col, Row} from 'react-materialize'
 
-class Yash extends React.component {
+class Yash extends React.Component {
 
 	state = {
 		yashtag: ""
