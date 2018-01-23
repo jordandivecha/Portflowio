@@ -14,5 +14,9 @@ export default {
       return axios.post("/api/user", userobj);
   }
 
+  postCreate: function (postobj){
+
+      return axios.post ("/api/post", postobj);
+  }
 
 };

@@ -1,0 +1,6 @@
+#Popout1 {
+	max-height: 700px;
+	
+	max-width: 600px;
+	overflow-y: auto;
+}

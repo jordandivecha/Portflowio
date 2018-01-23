@@ -11,7 +11,8 @@ import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
 import FooterElement from './components/Footer/Footer.js';
-import ModalPost from './components/Modal/ModalPost.js'
+import  ModalPost from './components/ModalPost/ModalPost.js';
+import ModalProfile from './components/ModalProfile/ModalProfile.js';
 
 
 
@@ -38,23 +39,24 @@ class App extends Component {
       <Router>
         <div>
           <Header/>
-       
-          
+
+
 
         <Security  issuer= {config.issuer}
                    client_id= {config.client_id}
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
+                    
                     <div>
                       <ul className= "right">
                         <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
                         <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
                         <ModalPost/>
-                        
-
+                        <ModalProfile/>
                       </ul>
                     </div>
+
             <Route path='/' component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
              <SecureRoute path='/protected' component={Protected}/>

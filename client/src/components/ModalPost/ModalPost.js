@@ -8,7 +8,29 @@ import Yash from "../yashtags";
 class ModalPost extends React.Component {
 constructor(props){
 super (props);
+this.state ={
+    title: "",
+    creator: "",
+    description: "",
+    website: "",
+    project: "",
+    tags: ""
+};
 }
+// handleinputchange
+handleFormSubmit = event => {
+  event.preventDefault();
+  if (this.state.tags && this.state.creator && this.state.title && this.state.description) {
+    API.postCreate({
+      title: this.state.title,
+      creator: this.state.creator,
+      description: this.state.description,
+      tags: this.state.tags
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  }
+};
   render(){
     return(
   <div>
