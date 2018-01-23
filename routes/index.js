@@ -5,8 +5,7 @@ const apiRoutes = require("./api");
 // models = require('./models'),
 // passport = require('passport'),
 // _ = require('underscore'),
-async = require('async'),
-stream_node = require('getstream-node'),
+
 // fs = require('fs'),
 // bodyParser = require('body-parser'),
 // methodOverride = require('method-override');

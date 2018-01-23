@@ -26,12 +26,12 @@ module.exports = {
 	},
 
 	remove: function(req, res) {
-   		db.Poast
+   		db.Post
     		.findById({ _id: req.params.id })
     		.then(dbModel => dbModel.remove())
     		.then(dbModel => res.json(dbModel))
     		.catch(err => res.status(422).json(err));
-	}
+	},
 
 	update: function(req, res) {
     	db.Post
