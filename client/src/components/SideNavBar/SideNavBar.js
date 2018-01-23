@@ -29,8 +29,9 @@ class SideNavBar extends React.Component {
 						email: this.props.email
 					}}
 					/>
+
 				<SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
-				<SideNavItem href='#!second'>Second Link</SideNavItem>
+				<SideNavItem href='mailto:{this.props.email}'>Second Link</SideNavItem>
 				<SideNavItem divider />
 				<SideNavItem subheader>Subheader</SideNavItem>
 				<SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
