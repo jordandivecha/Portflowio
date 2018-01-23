@@ -1,11 +1,11 @@
 import React from "react";
-import "./Modal.css";
+import "./ModalPost.css";
 
 import {Button, Modal, Row, Input} from "react-materialize";
 import Filestack from "../Filestack";
 import Yash from "../yashtags";
 
-class ModalElement extends React.Component {
+class ModalPost extends React.Component {
 constructor(props){
 super (props);
 }
@@ -17,7 +17,8 @@ super (props);
     	trigger={<Button>Post</Button>}>
       <Row>
   		<Input placeholder="Title" s={6} label="Title" />
-      <Input placeholder="Link" s={6} label="Link" />
+      <Input placeholder="Website" s={6} label="Link1" />
+      <Input placeholder="Project" s={6} label="Link2" />
       <Input placeholder="Description" s={6} label="Description" />
       </Row>
       <Row>
@@ -34,4 +35,4 @@ super (props);
 );
 }
 }
-export default ModalElement;
+export default ModalPost;

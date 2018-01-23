@@ -11,7 +11,7 @@ import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
 import FooterElement from './components/Footer/Footer.js';
-import ModalElement from './components/Modal/Modal.js'
+import ModalPost from './components/Modal/ModalPost.js'
 
 
 
@@ -41,7 +41,7 @@ class App extends Component {
           <ul className= "right">
             <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
             <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
-            <ModalElement/>
+            <ModalPost/>
 
           </ul>
         </div>
