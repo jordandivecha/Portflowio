@@ -55,7 +55,7 @@ axios.get ('https://dev-395184.oktapreview.com/oauth2/v1/userinfo',
           lastName={this.state.lastName}
           email={this.state.email}
         />
-      <Modal/>
+
       <Form/>
     </div>
       )
