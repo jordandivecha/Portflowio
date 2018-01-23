@@ -32,7 +32,7 @@ const seedUser = [{
 
 const seedPost =[{
   postImage: 'https://scontent-lax3-2.cdninstagram.com/vp/19889f14ebbe7c6801797ebca1ad6085/5ADF4A5D/t51.2885-15/e35/26066030_1582594718453955_6944867538157174784_n.jpg',
-
+  title: 'blahblah'
   link1: 'http://www.behance.com',
   link2: 'http://www.github.com',
   description: 'bla' }
