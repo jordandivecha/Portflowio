@@ -12,7 +12,7 @@ super (props);
   render(){
     return(
   <div>
-    <Modal
+    <Modal id = "Popout"
     	header= 'Tell your followers about your project.'
     	trigger={<Button>Post</Button>}>
       <Row>
