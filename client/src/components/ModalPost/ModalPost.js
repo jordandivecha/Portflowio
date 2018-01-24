@@ -30,7 +30,7 @@ if (JSON.parse(localStorage.getItem("okta-token-storage")).idToken){
   API.userFindByEmail(email)
   .then(res => {
     console.log(res);
-    this.setState({creator: res._id});
+    this.setState({creator: res.data._id});
   })
   .catch(err => console.log(err));
 };
@@ -74,7 +74,7 @@ handleFormSubmit = event => {
 
     <Modal id = "Popout"
     	header= 'Tell your followers about your project.'
-    	trigger={<Button>Post</Button>}
+    	trigger={<Button id="PostBtn">Post</Button>}
       actions={
         <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} data-confirm="Are you sure you want to submit?" >Submit</Button>
       }>

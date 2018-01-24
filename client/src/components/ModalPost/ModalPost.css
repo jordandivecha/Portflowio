@@ -2,3 +2,7 @@
 	max-height: 700px;
 	overflow-y: auto;
 }
+
+#PostBtn{
+	z-index: 10;
+}
