@@ -39,19 +39,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-
-        
-
-          <Header/>
-
-          
-
-
-
-
-
-
-
+        <Header/>
         <Security  issuer= {config.issuer}
                    client_id= {config.client_id}
                    redirect_uri={config.redirect_uri}
@@ -70,11 +58,7 @@ class App extends Component {
              <SecureRoute path='/profile' component={Profile}/>
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
-
-
-
          </div>
-
        </Router>
 
 
