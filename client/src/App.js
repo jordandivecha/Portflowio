@@ -40,9 +40,13 @@ class App extends Component {
       <Router>
         <div>
 
-
+        
 
           <Header/>
+
+          
+
+
 
 
 
@@ -72,6 +76,8 @@ class App extends Component {
          </div>
 
        </Router>
+
+
     );
   }
 }

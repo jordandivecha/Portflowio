@@ -73,13 +73,14 @@ this.getUserInfo();
 
   render() {
     return(
+<div>
 
-
-      <ScrollImage>
+      <ScrollImage />
+     
 
       {this.button()}
 
-      </ScrollImage>
+      </div>
 
 
 
