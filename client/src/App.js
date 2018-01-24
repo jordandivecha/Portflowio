@@ -18,6 +18,7 @@ import ModalProfile from './components/ModalProfile/ModalProfile.js';
 
 
 
+
 function onAuthRequired({history}) {
   history.push('/login');
 }
@@ -38,6 +39,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+
           <Header/>
 
 
