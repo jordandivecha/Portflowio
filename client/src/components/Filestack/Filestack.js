@@ -14,7 +14,7 @@ makeImage =(result) => {
   render(){
     return(
 <div>
-  <img id="profileImageUpload" src = {this.state.image}/>
+  <img id="imageUpload" src = {this.state.image}/>
 
   <ReactFilestack
     apikey="AdP2fF1FvRdGW4RWCKw8sz"
