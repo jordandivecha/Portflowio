@@ -21,15 +21,15 @@ this.state ={
 };
 }
 
-componentDidMount (){
-  var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
-
-  var email= tokenstuff.idToken.claims.email;
-  API.userFindByEmail(email)
-  .then(res => this.setState({creator: res._id}))
-  .catch(err => console.log(err));
-
-};
+// componentDidMount (){
+//   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
+//
+//   var email= tokenstuff.idToken.claims.email;
+//   API.userFindByEmail(email)
+//   .then(res => this.setState({creator: res._id}))
+//   .catch(err => console.log(err));
+//
+// };
 
 handleInputChange = event => {
   const { name, value } = event.target;
