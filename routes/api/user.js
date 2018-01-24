@@ -9,8 +9,8 @@ const userController = require("../../controllers/userController.js");
 //
 // 		router.route("/api/user/:email")
 // 			.get(userController
-
-router.route("/api/user/:email")
+console.log('gitdatuserroute');
+router.route("/:email")
 .get(userController.findByEmail);
 
 

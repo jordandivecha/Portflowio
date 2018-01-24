@@ -3,11 +3,10 @@ import axios from "axios";
 export default {
 
   userFindByEmail: function(email) {
-    return axios.get("/api/user/"+email);
+    console.log('sendin it to the back');
+    return axios.get("/api/profile/"+email);
   },
-  // userFindByEmail: function (email){
-  //   return axios.get("/api/user/" + email);
-  // },
+
 
   userCreate: function(userobj) {
 

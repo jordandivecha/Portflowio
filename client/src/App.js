@@ -53,7 +53,12 @@ class App extends Component {
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
-
+                    <ul className= "right">
+                      <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
+                      <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
+                      <ModalPost/>
+                      <ModalProfile/>
+                      </ul>
 
             <Route path='/' component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />

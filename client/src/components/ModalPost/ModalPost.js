@@ -21,15 +21,20 @@ this.state ={
 };
 }
 
-// componentDidMount (){
-//   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
-//
-//   var email= tokenstuff.idToken.claims.email;
-//   API.userFindByEmail(email)
-//   .then(res => this.setState({creator: res._id}))
-//   .catch(err => console.log(err));
-//
-// };
+componentDidMount (){
+if (JSON.parse(localStorage.getItem("okta-token-storage")).idToken){
+  var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
+
+  var email= tokenstuff.idToken.claims.email;
+  console.log("got the token");
+  API.userFindByEmail(email)
+  .then(res => {
+    console.log(res);
+    this.setState({creator: res._id});
+  })
+  .catch(err => console.log(err));
+};
+};
 
 handleInputChange = event => {
   const { name, value } = event.target;
@@ -37,6 +42,11 @@ handleInputChange = event => {
     [name]: value
   });
 };
+
+handleInputChangeCheckbox = event => {
+  const {value} = event.target;
+  this.state.tags.push(value);
+  };
 
 handleFormSubmit = event => {
 
@@ -71,14 +81,14 @@ handleFormSubmit = event => {
       <Row>
   		<Input name = "title" placeholder="Title" s={6} label="Title" onChange={this.handleInputChange}/>
       <Input name="website" placeholder="Website" s={6} label="Website" onChange={this.handleInputChange} />
-      <Input name="project"placeholder="Project" s={6} label="Project"onChange={this.handleInputChange} />
+      <Input name="project"placeholder="Project" s={6} label="Project" onChange={this.handleInputChange} />
       <Input name="description"placeholder="Description" s={6} label="Description" onChange={this.handleInputChange}/>
       </Row>
       <Row>
-		<Input onChange={this.handleInputChange} name='tags' type='radio' value='development' label='#Development' />
-		<Input onChange={this.handleInputChange} name='tags' type='radio' value='design' label='#Design' />
-      <Input onChange={this.handleInputChange} name='tags' type='radio' value='UX' label='#UX' />
-      <Input onChange={this.handleInputChange} name='tags' type='radio' value='photography' label='#Photography' />
+		<Input onChange={this.handleInputChangeCheckbox} name='tag1' type='checkbox' value='development' label='#Development' />
+		<Input onChange={this.handleInputChangeCheckbox} name='tag2' type='checkbox' value='design' label='#Design' />
+      <Input onChange={this.handleInputChangeCheckbox} name='tag3' type='checkbox' value='UX' label='#UX' />
+      <Input onChange={this.handleInputChangeCheckbox} name='tag4' type='checkbox' value='photography' label='#Photography' />
     </Row>
 
     <img id="imageUpload" src = {this.state.postImage}/>
