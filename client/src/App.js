@@ -49,7 +49,7 @@ class App extends Component {
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
-                    
+
                     <div>
                       <ul className= "right">
                         <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
@@ -66,7 +66,6 @@ class App extends Component {
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
 
-           <FooterElement/>
          </div>
 
        </Router>
