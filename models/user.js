@@ -13,10 +13,10 @@ const userSchema = new Schema({
     website: {type: String, required: false},
     email: {type: String, required: true},
     bio: {type: String, required: false},
-    followers: [{Schema.Types.ObjectId, ref: 'User'}],
-    following: [{Schema.Types.ObjectId, ref: 'User'}],
-    likes: [{Schema.Types.ObjectId, ref:'Post'}],
-    posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+    followers: [{type: ObjectId, ref: 'User'}],
+    following: [{type: ObjectId, ref: 'User'}],
+    likes: [{type: ObjectId, ref:'Post'}],
+    posts: [{type: ObjectId, ref: 'Post'}],
     date: { type: Date, default: Date.now }
 
   });

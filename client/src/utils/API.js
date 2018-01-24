@@ -2,9 +2,9 @@ import axios from "axios";
 
 export default {
 
-  // userFindByUsername: function(username) {
-  //   return axios.get("/api/user/"+ username);
-  // },
+  userFindByUsername: function(username) {
+    return axios.get("/api/user/"+ username);
+  },
   // userFindByEmail: function (email){
   //   return axios.get("/api/user/" + email);
   // },
