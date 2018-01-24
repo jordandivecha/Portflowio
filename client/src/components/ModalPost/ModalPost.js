@@ -14,18 +14,29 @@ this.state ={
     description: "",
     website: "",
     project: "",
-    tags: ""
+    tags: []
 };
 }
-// handleinputchange
+
+handleInputChange = event => {
+  const { name, value } = event.target;
+  this.setState({
+    [name]: value
+  });
+};
+
 handleFormSubmit = event => {
   event.preventDefault();
+  API.
   if (this.state.tags && this.state.creator && this.state.title && this.state.description) {
     API.postCreate({
       title: this.state.title,
       creator: this.state.creator,
       description: this.state.description,
-      tags: this.state.tags
+      tags: this.state.tags,
+      website: this.state.website,
+      project: this.state.project
+
     })
       .then(res => console.log(res))
       .catch(err => console.log(err));
