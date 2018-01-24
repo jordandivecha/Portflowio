@@ -10,6 +10,9 @@ const userController = require("../../controllers/userController.js");
 // 		router.route("/api/user/:email")
 // 			.get(userController
 
+router.route("/api/user/:email")
+.get(userController.findByEmail);
+
 
 router.route("/")
 .post(userController.create);

@@ -23,7 +23,7 @@ module.exports = {
       .insertOne(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).send('Oh No!'));
-		}
+		},
 	// },
   //
 	// remove: function(req, res) {
@@ -51,12 +51,12 @@ module.exports = {
   //     .catch(err => res.status(422).json(err));
   // },
   //
-  // findById: function(req, res) {
-  //   db.User
-  //     .findById(req.params.id)
-  //     .then(user => res.json(user))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  findByEmail: function(req, res) {
+    db.User
+      .findOne({email: req.params.email})
+      .then(user => res.json(user))
+      .catch(err => res.status(422).json(err));
+  }
   //
 	// findByUsername: function(req, res){
 	// 	db.User

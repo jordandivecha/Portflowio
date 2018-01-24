@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 var postSchema = new Schema({
   postImage: {type: String, required: true},
   title: {type: String, required: true},
-  creator: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+  creator: {type: Schema.Types.ObjectId, ref: 'User'},
   website: {type: String, required: false},
   project: {type: String, required: false},
   tags: [{type:String, required: false}]
