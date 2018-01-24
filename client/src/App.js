@@ -12,6 +12,7 @@ import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
 import  ModalPost from './components/ModalPost/ModalPost.js';
 import ModalProfile from './components/ModalProfile/ModalProfile.js';
+// import ScrollImage from './components/Parallax/Parallax.js';
 
 
 
@@ -39,7 +40,11 @@ class App extends Component {
       <Router>
         <div>
 
+        
+
           <Header/>
+
+          
 
 
 
@@ -64,6 +69,8 @@ class App extends Component {
              <SecureRoute path='/profile' component={Profile}/>
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
+
+           
 
          </div>
 

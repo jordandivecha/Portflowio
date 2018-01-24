@@ -74,11 +74,16 @@ this.getUserInfo();
 
   render() {
     return(
-      <div>
-      <ScrollImage />
-      {this.button()}
       
-    </div>
+
+      <ScrollImage>
+     
+      {this.button()}
+
+      </ScrollImage>
+
+      
+    
     );
   }
 });
