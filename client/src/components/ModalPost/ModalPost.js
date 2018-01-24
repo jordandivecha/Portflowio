@@ -4,6 +4,7 @@ import "./ModalPost.css";
 import {Button, Modal, Row, Input} from "react-materialize";
 import Filestack from "../Filestack";
 import Yash from "../yashtags";
+import API from "../../utils/API.js";
 
 class ModalPost extends React.Component {
 constructor(props){
@@ -27,7 +28,7 @@ handleInputChange = event => {
 
 handleFormSubmit = event => {
   event.preventDefault();
-  API.
+
   if (this.state.tags && this.state.creator && this.state.title && this.state.description) {
     API.postCreate({
       title: this.state.title,
@@ -49,7 +50,7 @@ handleFormSubmit = event => {
     	header= 'Tell your followers about your project.'
     	trigger={<Button>Post</Button>}>
       <Row>
-  		<Input placeholder="Title" s={6} label="Title" />
+  		<Input name = "Title" placeholder="Title" s={6} label="Title" />
       <Input placeholder="Website" s={6} label="Link1" />
       <Input placeholder="Project" s={6} label="Link2" />
       <Input placeholder="Description" s={6} label="Description" />

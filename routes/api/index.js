@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const savedCardsRoutes = require("./savedCards.js");
-const userRoutes = require ("./user.js")
+const postRoutes = require("./post.js");
+const profileRoutes = require ("./user.js");
 
 
-router.use("/savedCards", savedCardsRoutes);
-router.use ("/user", userRoutes);
+router.use("/post", postRoutes);
+router.use ("/profile", profileRoutes);
 
 module.exports = router;
