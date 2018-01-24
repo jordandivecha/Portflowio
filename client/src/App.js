@@ -12,7 +12,7 @@ import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
 import  ModalPost from './components/ModalPost/ModalPost.js';
 import ModalProfile from './components/ModalProfile/ModalProfile.js';
-// import ScrollImage from './components/Parallax/Parallax.js';
+
 
 
 
