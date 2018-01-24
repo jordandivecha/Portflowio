@@ -1,6 +1,5 @@
-// Holds cards
-
-// Class with methods (render)
-
-// wrapper
-// will import cardelement
+.CardElement {
+  max-width: 30%;
+  height: 30%;
+  float: left;
+};

@@ -8,10 +8,10 @@ import "./CardElement.css";
 import {Card, CardTitle} from "react-materialize";
 
 const PortflowioCard = props => (
-	<Card className='small'
+	<Card className='card-image CardElement'
 		header={<CardTitle image={props.postImage}>{props.title}</CardTitle>}
-		actions={[<a href={props.link1}>Website</a>
-		<a href={props.link2}>Project</a>]}>
+		actions={[<span><a href={props.link1}>Website</a>
+		<a href={props.link2}>Project</a></span>]}>
 		Created by {props.creator} {props.profileLink}
 		Description: {props.description}
 	</Card>
