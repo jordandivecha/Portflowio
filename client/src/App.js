@@ -10,7 +10,6 @@ import Login from './components/Okta/Login.js';
 import Protected from './components/Okta/Protected.js';
 import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
-import FooterElement from './components/Footer/Footer.js';
 import  ModalPost from './components/ModalPost/ModalPost.js';
 import ModalProfile from './components/ModalProfile/ModalProfile.js';
 
