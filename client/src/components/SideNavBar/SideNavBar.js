@@ -1,6 +1,6 @@
 // Static Sidenav
 
-import "./SideNav.css";
+import "./SideNavBar.css";
 
 import React from "react";
 import {SideNav, Button, SideNavItem} from "react-materialize";
@@ -14,7 +14,8 @@ class SideNavBar extends React.Component {
 	}
 	render (){
 		return(
-			<SideNav className= "fixed side-nav"
+			<SideNav id="slide-out"
+				className= "fixed side-nav"
 				trigger = {<Button>Profile Info</Button>}
 				options={{
 					 closeOnClick: true,
@@ -22,21 +23,21 @@ class SideNavBar extends React.Component {
 
 				  }}
 				>
-				<SideNavItem userView
+				<SideNavItem className="blue-text" id="user-info" userView
 					user={
 						{
-						background:  'https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-Artsy-Images-PIC-WPE005644.jpg',
+						background:  'https://videvo.net/videvo_files/images/preview_Abstract_Blue_Light_StreaksVidevo.jpg',
 						image: this.props.image ? this.props.image : 'https://s-media-cache-ak0.pinimg.com/originals/eb/da/ca/ebdacab8cf17e0071c78e0f1f5754a13.jpg',
 						name: this.props.firstName + " " + this.props.lastName,
 						email: this.props.email
 					}}
 					/>
 
-				<SideNavItem href='#!icon'>First Link</SideNavItem>
-				<SideNavItem href='mailto:{this.props.email}'>Second Link</SideNavItem>
+				<SideNavItem id="first-link" href='#!icon'><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
+				<SideNavItem href='mailto:{this.props.email}'><i class="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
 				<SideNavItem divider />
 				<SideNavItem subheader>Subheader</SideNavItem>
-				<SideNavItem waves href='#!third'>Third Link</SideNavItem>
+				<SideNavItem waves href='#!third'><i class="fa fa-link" aria-hidden="true"></i>Website</SideNavItem>
 			</SideNav>
 
 );
