@@ -6,6 +6,8 @@ import axios from 'axios';
 import API from "../../utils/API.js";
 import Home from "../../pages/Home";
 
+import ScrollImage from '../../components/Parallax/Parallax.js';
+
 export default withAuth(class Home extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +75,9 @@ this.getUserInfo();
   render() {
     return(
       <div>
+      <ScrollImage />
       {this.button()}
+      
     </div>
     );
   }
