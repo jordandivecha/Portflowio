@@ -40,7 +40,6 @@ this.getUserInfo();
       .then (function (response) {
         console.log (response.data);
         var userauthobj = {
-          _id: response.data.email,
           firstName: response.data.given_name,
           lastName: response.data.family_name,
           email: response.data.email
@@ -74,18 +73,17 @@ this.getUserInfo();
 
   render() {
     return(
-
-      <div>
-      
+<div>
 
       <ScrollImage />
      
+
       {this.button()}
 
       </div>
 
-      
-    
+
+
     );
   }
 });

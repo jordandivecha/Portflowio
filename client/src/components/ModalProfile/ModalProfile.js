@@ -11,15 +11,15 @@ class ModalProfile extends React.Component {
 constructor(props){
 super (props);
 this.state = {
-  // firstName
-  // lastName
-  // birthday
-  // email
-  // github
-  // linkedin
-  // website
-  // bio
-  // userImage
+  firstName: '',
+  lastName: '',
+  birthday: '',
+  email: '',
+  github: '',
+  linkedin: '',
+  website: '',
+  bio: '',
+  userImage: ''
 };
 }
   render(){
