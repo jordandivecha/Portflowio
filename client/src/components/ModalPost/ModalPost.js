@@ -62,7 +62,6 @@ handleFormSubmit = event => {
         .then(res => console.log(res))
         .catch(err => console.log(err));
 
-  // if (this.state.tags && this.state.creator && this.state.title && this.state.description) {
 
 }
   makeImage =(result) => {
