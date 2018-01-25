@@ -7,6 +7,8 @@ import Yash from "../yashtags";
 import API from "../../utils/API.js";
 import ReactFilestack, {client} from 'filestack-react';
 
+
+
 class ModalPost extends React.Component {
 constructor(props){
 super (props);
@@ -76,12 +78,16 @@ handleFormSubmit = event => {
     	trigger={<Button id="PostBtn">Post</Button>}
       actions={
         <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} data-confirm="Are you sure you want to submit?" >Submit</Button>
+               
       }>
+      
       <Row>
   		<Input name = "title" placeholder="Title" s={6} label="Title" onChange={this.handleInputChange}/>
       <Input name="website" placeholder="Website" s={6} label="Website" onChange={this.handleInputChange} />
       <Input name="project"placeholder="Project" s={6} label="Project" onChange={this.handleInputChange} />
-      <Input name="description"placeholder="Description" s={6} label="Description" onChange={this.handleInputChange}/>
+      </Row>
+      <Row>
+      <Input name="description"placeholder="Description" s={12} label="Description" onChange={this.handleInputChange}/>
       </Row>
       <Row>
 		<Input onChange={this.handleInputChangeCheckbox} name='tag1' type='checkbox' value='development' label='#Development' />
@@ -99,6 +105,7 @@ handleFormSubmit = event => {
       options=""
       onSuccess={this.makeImage}
     />
+
     </Modal>
 
 
