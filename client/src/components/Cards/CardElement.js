@@ -10,15 +10,14 @@ import {Card, CardTitle} from "react-materialize";
 
 const PortflowioCard = props => (
 
-
 	<Card className='card-image CardElement'
-		header={<CardTitle image={props.postImage}>{props.title}</CardTitle>}
-		actions={[<span><a href={props.website}>Website</a>
+		header={<CardTitle image={props.postImage}></CardTitle>}
+		actions={[<span>{props.title} Created by {props.creator.username} <br/> <a href={props.website}>Website</a>
 		<a href={props.project}>Project</a></span>]}>
-		Created by {props.creator}
 
 		Description: {props.description}
 	</Card>
 	);
+//description above is not showing up
 
 export default PortflowioCard;
