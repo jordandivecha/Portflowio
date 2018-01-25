@@ -9,6 +9,7 @@
 
 #imageUpload {
 	max-width: 250px;
+	max-height: 250px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
