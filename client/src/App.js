@@ -14,11 +14,6 @@ import  ModalPost from './components/ModalPost/ModalPost.js';
 import ModalProfile from './components/ModalProfile/ModalProfile.js';
 
 
-
-
-
-
-
 function onAuthRequired({history}) {
   history.push('/login');
 }
@@ -39,7 +34,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-        <Header/>
         <Security  issuer= {config.issuer}
                    client_id= {config.client_id}
                    redirect_uri={config.redirect_uri}
