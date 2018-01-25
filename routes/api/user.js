@@ -12,7 +12,7 @@ const userController = require("../../controllers/userController.js");
 console.log('gitdatuserroute');
 router.route("/:email")
 .get(userController.findByEmail)
-.post(userController.);
+.put(userController.update);
 
 
 router.route("/")
