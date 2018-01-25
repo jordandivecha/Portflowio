@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import API from "../../utils/API.js";
 import Home from "../../pages/Home";
+import Header from "../../components/Header";
 
 
 
@@ -74,12 +75,8 @@ this.getUserInfo();
   render() {
     return(
     <div>
-
-      
-     
-
+      <Header id="headerHome" />
       {this.button()}
-
     </div>
 
 
