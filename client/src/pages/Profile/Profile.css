@@ -1,3 +1,21 @@
-.displace {
-  margin-left: 250px;
+/* .logoimage {
+  padding-left: 500px;
+} */
+.profileholder{
+  padding-left: 500px;
+}
+
+.profileButton{
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 992px){
+  .profileholder{
+    padding-left: 0px;
+  }
+  .profileButton{
+    visibility: visible;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 }
