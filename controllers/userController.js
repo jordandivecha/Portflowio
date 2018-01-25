@@ -36,9 +36,14 @@ module.exports = {
 	// },
   //
   update: function(req, res) {
+		console.log(req.body);
 
-    db.User.findOneAndUpdate({ '_id': ObjectId(req.params.userid)}, {$set: req.body}, { new: true }).then(user =>res.json(user)
-	).catch(err => res.status(422).json(err));
+    db.User.findOneAndUpdate(
+			{ '_id': ObjectId(req.params.userid)},
+			{$set: req.body},
+			)
+		.then(user =>res.json(user))
+		.catch(err => res.status(422).json(err));
 
   },
   //
