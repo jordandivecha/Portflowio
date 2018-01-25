@@ -12,7 +12,7 @@ export default {
   },
 
   userUpdate: function(userid, object){
-    console.log('got to API');
+    console.log(userid);
     return axios.post("/api/profile/"+userid, object);
   },
 

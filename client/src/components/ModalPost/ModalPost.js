@@ -12,6 +12,7 @@ import ReactFilestack, {client} from 'filestack-react';
 class ModalPost extends React.Component {
 constructor(props){
 super (props);
+
 this.state ={
     title: "",
     creator: "",
@@ -21,10 +22,11 @@ this.state ={
     tags: [],
     postImage: ""
 };
+console.log(props.authenticated);
 }
 
 componentDidMount (){
-if (this.props.authenticated === true){
+
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
@@ -35,7 +37,7 @@ if (this.props.authenticated === true){
     this.setState({creator: res.data._id});
   })
   .catch(err => console.log(err));
-};
+
 };
 
 handleInputChange = event => {
@@ -51,7 +53,7 @@ handleInputChangeCheckbox = event => {
   };
 
 handleFormSubmit = event => {
-
+console.log(this.state);
       API.postCreate({
         title: this.state.title,
         creator: this.state.creator,
@@ -77,10 +79,10 @@ handleFormSubmit = event => {
     	header= 'Tell your followers about your project.'
     	trigger={<Button id="PostBtn">Post</Button>}
       actions={
-        <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} data-confirm="Are you sure you want to submit?" >Submit</Button>
-               
+        <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Submit</Button>
+
       }>
-      
+
       <Row>
   		<Input name = "title" placeholder="Title" s={6} label="Title" onChange={this.handleInputChange}/>
       <Input name="website" placeholder="Website" s={6} label="Website" onChange={this.handleInputChange} />

@@ -48,10 +48,10 @@ this.getUserInfo();
           firstName: response.data.given_name,
           lastName: response.data.family_name,
           email: response.data.email,
-          userImage: "",
-          password: "",
+          userImage: "www.cool.com",
+          password: "yay",
           username: "",
-          github: "",
+          github: "somewebsite.com",
           linkedin: "",
           website: "",
           bio: "",
@@ -125,7 +125,7 @@ findAuthorbyId(id){
 
       {this.authButton()}
 
-    
+
       <PopChips/>
 
         <div className = "postHolder">

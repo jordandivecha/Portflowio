@@ -12,22 +12,24 @@ class ModalProfile extends React.Component {
 constructor(props){
 super (props);
 this.state = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  github: '',
-  linkedin: '',
-  website: '',
-  bio: '',
-  userImage: '',
-  userId:'',
-  username: ''
+  firstName: this.props.firstName,
+  lastName: this.props.lastName,
+  email: this.props.email,
+  github: this.props.github,
+  linkedin: this.props.linkedin,
+  website: this.props.website,
+  bio: this.props.bio,
+  userImage: this.props.userImage,
+  userId: this.props.id,
+  username: this.props.username
 
 };
+console.log(props);
 };
 
 componentDidMount(){
-if (JSON.parse(localStorage.getItem("okta-token-storage")).idToken){
+if (this.props.authenticated){
+
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
@@ -54,16 +56,18 @@ handleInputChange = event => {
 handleFormSubmit = event => {
 
   console.log(this.state.userId);
+
   var userupdateobj=
-  {firstName: this.state.firstName,
+  {
+  firstName: this.state.firstName,
   lastName: this.state.lastName,
-  email: this.state.email,
   github: this.state.github,
   linkedin: this.state.linkedin,
   website: this.state.website,
   bio: this.state.bio,
   userImage: this.state.userImage,
-  username: this.state.username};
+  username: this.state.username
+};
 
       API.userUpdate(
         this.state.userId, userupdateobj)
@@ -82,26 +86,26 @@ handleFormSubmit = event => {
     <Modal id = "Popout1"
     	header= 'Update Your Profile'
     	trigger={<Button>Edit Profile</Button>}
-      actions = {<Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} data-confirm="Are you sure you want to submit?" >Update</Button>}>
+      actions = {<Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Update</Button>}>
       <Row>
-        <Input s={6} name="firstName"label="First Name" onChange={this.handleInputChange}/>
-        <Input s={6} name="lastName" label="Last Name" onChange={this.handleInputChange} />
+        <Input s={6} name="firstName" label="First Name" onChange={this.handleInputChange} value={this.state.firstName} placeholder={this.props.firstName}/>
+        <Input s={6} name="lastName" label="Last Name" onChange={this.handleInputChange} value={this.state.lastName} placeholder={this.props.lastName}/>
         </Row>
         <Row>
-        <Input s={6} name="username" label="Username" validate onChange={this.handleInputChange}/>
-        <Input name="email" type="email" label="Email" s={6} onChange={this.handleInputChange}/>
+        <Input s={12} className="active"name="username" label="Username" validate onChange={this.handleInputChange} value={this.state.username}
+          placeholder={this.props.username}/>
+      </Row>
+        <Row>
+        <Input name="github" s={12} label="Github URL" onChange={this.handleInputChange} value={this.state.github}placeholder={this.props.github}/>
         </Row>
         <Row>
-        <Input name="github" s={12} label="Github URL" onChange={this.handleInputChange}/>
+        <Input s={12} name="linkedin" label="Linkedin URL" onChange={this.handleInputChange} value={this.state.linkedin}placeholder={this.props.linkedin} />
         </Row>
         <Row>
-        <Input s={12} name="linkedin" label="Linkedin URL" onChange={this.handleInputChange} />
+        <Input s={12} name="website" label="Website URL" onChange={this.handleInputChange} value={this.state.website}placeholder={this.props.website}/>
         </Row>
         <Row>
-        <Input s={12} name="website" label="Website URL" onChange={this.handleInputChange}/>
-        </Row>
-        <Row>
-        <Input name="bio" s={12} label="Bio" onChange={this.handleInputChange}/>
+        <Input name="bio" s={12} label="Bio" value={this.state.bio} onChange={this.handleInputChange} placeholder={this.props.bio} />
         </Row>
         <Row>
         <img id="imageUpload" src ={this.state.userImage}/>

@@ -9,7 +9,9 @@ class SideNavBar extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.state ={};
+		this.state ={
+			authenticated: this.props.authenticated
+		};
 		console.log(props);
 	}
 	render (){
@@ -32,10 +34,21 @@ class SideNavBar extends React.Component {
 						email: this.props.email
 					}}
 					/>
-				<ModalProfile/>
-				<SideNavItem  id="linkedin" href="{this.props.linkedin}"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
-				<SideNavItem id="second-link" href="{this.props.github}"><i class="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
-				<SideNavItem id="third-link" href='{this.props.website}'><i class="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem>
+				<ModalProfile
+					firstName= {this.props.firstName}
+          lastName={this.props.lastName}
+          email={this.props.email}
+          image={this.props.userImage}
+          bio= {this.props.bio}
+          linkedin= {this.props.linkedin}
+          website={this.props.website}
+          github={this.props.github}
+          username= {this.props.username}
+          authenticated = {this.props.authenticated}
+					id={this.props.id}/>
+				<SideNavItem  id="linkedin" href={this.props.linkedin}><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
+				<SideNavItem id="second-link" href={this.props.github}><i class="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
+				<SideNavItem id="third-link" href={this.props.website}><i class="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem>
 				<SideNavItem id="about"><h6>About</h6><p>{this.props.bio}</p></SideNavItem>
 				</SideNav>
 

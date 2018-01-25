@@ -8,35 +8,33 @@ import GlobalNav from "../../components/GlobalNav";
 import axios from "axios";
 import SideNavBar from "../../components/SideNavBar";
 import API from "../../utils/API.js";
+import { withAuth } from '@okta/okta-react';
 
-class Profile extends React.Component{
+export default withAuth(class Profile extends React.Component{
   constructor(props){
 
 super(props);
     this.state ={
-      user:{}
+      user:{},
+      authenticated: true
     }
 
-console.log(props)
-
+    console.log(props);
+    console.log (this.state.authenticated);
 }
 
-authButton() {
-  if ((JSON.parse(localStorage.getItem("okta-token-storage"))).idToken){
-  return(
-    <button type="button" className="btn btn-info right auth" onClick={this.props.auth.logout}>Logout</button>);
-  }
-  else{
-    return(<button type="button" className="btn btn-info right auth" onClick={this.props.auth.login}>Login</button>);
 
-  }
-}
+
+
+
+
+
 componentDidMount (){
-if (JSON.parse(localStorage.getItem("okta-token-storage")).idToken){
+if (this.state.authenticated){
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
-  console.log("got the token");
+  console.log("email");
   API.userFindByEmail(email)
   .then(res => {
     console.log(res);
@@ -62,11 +60,12 @@ if (JSON.parse(localStorage.getItem("okta-token-storage")).idToken){
           website={this.state.user.website}
           github={this.state.user.github}
           username= {this.state.user.username}
+          authenticated = {this.state.authenticated}
+          id={this.state.user._id}
 
         />
     </div>
   );
 
   }
-}
-export default Profile;
+});
