@@ -3,6 +3,7 @@ import "./Profile.css";
 import React from  "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import PortflowioCard from "../../components/Cards";
+import Header from "../../components/Header";
 
 import axios from "axios";
 import SideNavBar from "../../components/SideNavBar";
@@ -50,6 +51,7 @@ axios.get ('https://dev-395184.oktapreview.com/oauth2/v1/userinfo',
   render(){
     return(
       <div>
+        <Header id="headerProfile" />
         <SideNavBar
           firstName={this.state.firstName}
           lastName={this.state.lastName}

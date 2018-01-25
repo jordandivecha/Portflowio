@@ -5,8 +5,9 @@ import axios from 'axios';
 
 import API from "../../utils/API.js";
 import Home from "../../pages/Home";
+import Header from "../../components/Header";
 
-import ScrollImage from '../../components/Parallax/Parallax.js';
+
 
 export default withAuth(class Home extends Component {
   constructor(props) {
@@ -74,14 +75,18 @@ this.getUserInfo();
 
   render() {
     return(
-<div>
 
 
 
+
+
+
+
+    <div>
+      <Header id="headerHome" />
 
       {this.button()}
-
-      </div>
+    </div>
 
 
 

@@ -12,11 +12,6 @@ import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
 import  ModalPost from './components/ModalPost/ModalPost.js';
 import ModalProfile from './components/ModalProfile/ModalProfile.js';
-// import ScrollImage from './components/Parallax/Parallax.js';
-
-
-
-
 
 
 function onAuthRequired({history}) {
@@ -39,19 +34,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-
-        
-
-          <Header/>
-
-          
-
-
-
-
-
-
-
         <Security  issuer= {config.issuer}
                    client_id= {config.client_id}
                    redirect_uri={config.redirect_uri}
@@ -70,11 +52,7 @@ class App extends Component {
              <SecureRoute path='/profile' component={Profile}/>
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
-
-
-
          </div>
-
        </Router>
 
 
