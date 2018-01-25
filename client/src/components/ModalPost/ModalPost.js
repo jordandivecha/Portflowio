@@ -26,7 +26,7 @@ console.log(props.authenticated);
 }
 
 componentDidMount (){
-
+if(localStorage.getItem("okta-token-storage") !== null){
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
@@ -38,8 +38,8 @@ componentDidMount (){
   })
   .catch(err => console.log(err));
 
+}
 };
-
 handleInputChange = event => {
   const { name, value } = event.target;
   this.setState({
