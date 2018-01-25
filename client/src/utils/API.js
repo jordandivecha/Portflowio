@@ -9,7 +9,7 @@ export default {
 
   userUpdate: function(email){
     return axios.post("/api/profile/"+email)
-  }
+  },
 
   userCreate: function(userobj) {
 
