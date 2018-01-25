@@ -11,7 +11,8 @@ const userController = require("../../controllers/userController.js");
 // 			.get(userController
 console.log('gitdatuserroute');
 router.route("/:email")
-.get(userController.findByEmail);
+.get(userController.findByEmail)
+.post(userController.);
 
 
 router.route("/")
