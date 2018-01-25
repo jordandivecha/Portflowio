@@ -1,4 +1,11 @@
 .logoimage {
-  max-width: 350px;
+  max-width: 400px;
+  float: right;
+  background: rgba(250, 250, 250, 0.9);
+  margin-right: 10px;
+  border: solid 5px black;
+  box-shadow: 3px 1px black;
+}
+.logo{
   margin: 0 auto;
 }

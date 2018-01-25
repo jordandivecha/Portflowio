@@ -14,6 +14,7 @@ router.route("/:email")
 .get(userController.findByEmail);
 
 router.route("/:userid")
+.get(userController.findById)
 .post(userController.update);
 
 

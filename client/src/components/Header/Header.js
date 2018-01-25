@@ -3,7 +3,7 @@ import "./Header.css";
 
 const Header = props => (
   <div class = "logo">
-      <img src="https://i.imgur.com/JjMvbIZ.png" class = "logoimage" />
+      <img src="https://i.imgur.com/Ukaib1d.png" class = "logoimage" />
   </div>
 );
 

@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 Icon?
 Icon
+yarn.lock
