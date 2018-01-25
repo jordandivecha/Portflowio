@@ -3,6 +3,21 @@
 	overflow-y: auto;
 }
 
-#PostBtn{
+#PostBtn {
 	z-index: 10;
+}
+
+#imageUpload {
+	max-width: 250px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.classname {
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+#submitBtn {
+	margin: 0 auto;
 }
