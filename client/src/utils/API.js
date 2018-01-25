@@ -3,10 +3,13 @@ import axios from "axios";
 export default {
 
   userFindByEmail: function(email) {
-    console.log('sendin it to the back');
+
     return axios.get("/api/profile/"+email);
   },
 
+  userUpdate: function(email){
+    return axios.post("/api/profile/"+email)
+  }
 
   userCreate: function(userobj) {
 

@@ -35,13 +35,12 @@ module.exports = {
   //   .catch(err => res.status(422).json(err));
 	// },
   //
-  // update: function(req, res) {
-  //   //what am i even doing? ...my best.
-  //   db.User
-  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //     .then(user => res.json(user))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  update: function(req, res) {
+    db.User
+      .findOneAndUpdate({ email: req.params.email }, req.body)
+      .then(user => res.json(user))
+      .catch(err => res.status(422).json(err));
+  },
   //
   // findAll: function(req, res) {
   //   db.User
@@ -52,7 +51,7 @@ module.exports = {
   // },
   //
   findByEmail: function(req, res) {
-		console.log('sendingtodb');
+
     db.User
       .findOne(
 				{email: req.params.email}
