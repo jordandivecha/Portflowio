@@ -1,6 +1,13 @@
 #Popout1 {
 	max-height: 700px;
-	
+
 	max-width: 600px;
 	overflow-y: auto;
+}
+
+#imageUpload {
+	max-width: 250px;
+	max-height: 250px;
+	margin: 0 auto;
+	margin-bottom: 20px;
 }
