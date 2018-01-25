@@ -51,8 +51,9 @@ module.exports = {
   // },
   //
   findByEmail: function(req, res) {
+
     db.User
-      .find(
+      .findOne(
 				{email: req.params.email}
 			)
       .then(user => res.json(user))

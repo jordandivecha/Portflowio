@@ -13,7 +13,7 @@ export default {
 
   userCreate: function(userobj) {
 
-      return axios.post("/api/user", userobj);
+      return axios.post("/api/profile", userobj);
   },
 
   postCreate: function (postobj){

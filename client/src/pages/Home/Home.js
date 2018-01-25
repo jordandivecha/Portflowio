@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import API from "../../utils/API.js";
 import Home from "../../pages/Home";
+import Header from "../../components/Header";
 
 
 
@@ -40,6 +41,7 @@ this.getUserInfo();
       .then (function (response) {
         console.log (response.data);
         var userauthobj = {
+          _id: response.data.email,
           firstName: response.data.given_name,
           lastName: response.data.family_name,
           email: response.data.email
@@ -73,13 +75,17 @@ this.getUserInfo();
 
   render() {
     return(
-    <div>
 
-      
-     
+
+
+
+
+
+
+    <div>
+      <Header id="headerHome" />
 
       {this.button()}
-
     </div>
 
 
