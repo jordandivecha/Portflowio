@@ -16,7 +16,7 @@ class SideNavBar extends React.Component {
 		return(
 			<SideNav id="slide-out"
 				className= "fixed side-nav"
-				trigger = {<Button>Profile Info</Button>}
+				trigger = {<Button className="profileButton">Profile Info</Button>}
 				options={{
 					 closeOnClick: true,
 					 draggable: true,

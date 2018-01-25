@@ -50,7 +50,7 @@ axios.get ('https://dev-395184.oktapreview.com/oauth2/v1/userinfo',
 
   render(){
     return(
-      <div>
+      <div className="profileholder">
         <Header id="headerProfile" />
         <SideNavBar
           firstName={this.state.firstName}

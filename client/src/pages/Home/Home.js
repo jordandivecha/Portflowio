@@ -76,12 +76,6 @@ this.getUserInfo();
   render() {
     return(
 
-
-
-
-
-
-
     <div>
       <Header id="headerHome" />
 
