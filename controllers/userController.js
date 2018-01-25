@@ -1,5 +1,5 @@
 const db = require("../models");
-
+var ObjectId = require('mongodb').ObjectId;
 module.exports = {
 
 	create: function(req, res) {
@@ -36,10 +36,10 @@ module.exports = {
 	// },
   //
   update: function(req, res) {
-    db.User
-      .findOneAndUpdate({ email: req.params.email }, req.body)
-      .then(user => res.json(user))
-      .catch(err => res.status(422).json(err));
+
+    db.User.findOneAndUpdate({ '_id': ObjectId(req.params.userid)}, {$set: req.body}, { new: true }).then(user =>res.json(user)
+	).catch(err => res.status(422).json(err));
+
   },
   //
   // findAll: function(req, res) {
@@ -54,7 +54,7 @@ module.exports = {
 
     db.User
       .findOne(
-				{email: req.params.email}
+				{'email': req.params.email}
 			)
       .then(user => res.json(user))
       .catch(err => res.status(422).json(err));

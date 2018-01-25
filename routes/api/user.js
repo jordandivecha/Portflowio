@@ -9,10 +9,12 @@ const userController = require("../../controllers/userController.js");
 //
 // 		router.route("/api/user/:email")
 // 			.get(userController
-console.log('gitdatuserroute');
+
 router.route("/:email")
-.get(userController.findByEmail)
-.put(userController.update);
+.get(userController.findByEmail);
+
+router.route("/:userid")
+.post(userController.update);
 
 
 router.route("/")

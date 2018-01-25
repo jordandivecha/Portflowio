@@ -7,8 +7,9 @@ export default {
     return axios.get("/api/profile/"+email);
   },
 
-  userUpdate: function(email){
-    return axios.post("/api/profile/"+email)
+  userUpdate: function(id, object){
+    console.log('got to API');
+    return axios.post("/api/profile/"+id, object);
   },
 
   userCreate: function(userobj) {
