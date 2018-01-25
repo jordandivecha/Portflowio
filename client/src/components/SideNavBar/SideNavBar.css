@@ -1,11 +1,12 @@
 /*  */
-.side-nav {
-
+.side-nav, .userinfo {
+	color: white;
 	width: 300px;
+
 }
 
-.white-text {
-	text-align: center;
+SideNavItem{
+	color:white;
 }
 
 #slide-out {
@@ -19,4 +20,10 @@
 
 .fa-linkedin-square{
 	color: #6fcefa;
+}
+#linkedin{
+	color: white !important;
+}
+a{
+	color: white;
 }

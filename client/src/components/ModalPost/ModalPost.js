@@ -59,7 +59,7 @@ handleFormSubmit = event => {
         project: this.state.project,
         postImage: this.state.postImage
       })
-        .then(res => console.log(res))
+        .then(res => console.log(res.data))
         .catch(err => console.log(err));
 
 

@@ -12,7 +12,7 @@ import Form from './components/Form/Form.js';
 import Header from './components/Header/Header.js';
 import  ModalPost from './components/ModalPost/ModalPost.js';
 import ModalProfile from './components/ModalProfile/ModalProfile.js';
-
+import "./index.css"
 
 function onAuthRequired({history}) {
   history.push('/login');
@@ -39,14 +39,9 @@ class App extends Component {
                    redirect_uri={config.redirect_uri}
                    onAuthRequired={onAuthRequired}
                     >
-                    <ul className= "right">
-                      <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
-                      <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
-                      <ModalPost/>
-                      <ModalProfile/>
-                      </ul>
 
-            <Route path='/' exact={true} component={Home}/>
+
+            <Route path='/' component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
              <SecureRoute path='/protected' component={Protected}/>
              <SecureRoute path='/profile' component={Profile}/>

@@ -6,10 +6,14 @@ export default {
 
     return axios.get("/api/profile/"+email);
   },
+  userFindById: function(userid) {
 
-  userUpdate: function(id, object){
+    return axios.get("/api/profile/"+userid);
+  },
+
+  userUpdate: function(userid, object){
     console.log('got to API');
-    return axios.post("/api/profile/"+id, object);
+    return axios.post("/api/profile/"+userid, object);
   },
 
   userCreate: function(userobj) {
@@ -20,6 +24,10 @@ export default {
   postCreate: function (postobj){
 
       return axios.post("/api/post", postobj);
+  },
+
+  getAllPosts: function (){
+    return axios.get("/api/post");
   }
 
 };
