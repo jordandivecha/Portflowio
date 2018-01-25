@@ -12,7 +12,7 @@ const userSchema = new Schema({
     github: {type: String, required: false},
     linkedin: {type: String, required:false},
     website: {type: String, required: false},
-    email: {type: String, required: true},
+    email: {type: String, required: true, unique: true},
     bio: {type: String, required: false},
     followers: [{type: Schema.Types.ObjectId, ref: 'User'}],
     following: [{type: Schema.Types.ObjectId, ref: 'User'}],
