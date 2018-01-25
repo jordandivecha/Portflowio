@@ -52,9 +52,9 @@ module.exports = {
   // },
   //
   findByEmail: function(req, res) {
-		console.log('hi');
+		console.log('sendingtodb');
     db.User
-      .find(
+      .findOne(
 				{email: req.params.email}
 			)
       .then(user => res.json(user))
