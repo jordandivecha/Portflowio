@@ -46,10 +46,11 @@ class SideNavBar extends React.Component {
           username= {this.props.username}
           authenticated = {this.props.authenticated}
 					id={this.props.id}/>
-				<SideNavItem  id="linkedin" href={this.props.linkedin}><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
-				<SideNavItem id="second-link" href={this.props.github}><i class="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
-				<SideNavItem id="third-link" href={this.props.website}><i class="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem>
-				<SideNavItem id="about"><h6>About</h6><p>{this.props.bio}</p></SideNavItem>
+					<hr className="style13"/>
+				<SideNavItem  id="linkedin" href={this.props.linkedin}><i className="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
+				<SideNavItem id="second-link" href={this.props.github}><i className="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
+				<SideNavItem id="third-link" href={this.props.website}><i className="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem> <hr className="style13"/>
+				<SideNavItem id="about"><h5>About</h5><p>{this.props.bio}</p></SideNavItem>
 				</SideNav>
 
 );

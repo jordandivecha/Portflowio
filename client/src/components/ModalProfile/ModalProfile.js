@@ -85,7 +85,7 @@ handleFormSubmit = event => {
   <div>
     <Modal id = "Popout1"
     	header= 'Update Your Profile'
-    	trigger={<Button>Edit Profile</Button>}
+    	trigger={<Button className="editProfile #4fc3f7 light-blue lighten-2">Edit Profile</Button>}
       actions = {<Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Update</Button>}>
       <Row>
         <Input s={6} name="firstName" label="First Name" onChange={this.handleInputChange} value={this.state.firstName} placeholder={this.props.firstName}/>

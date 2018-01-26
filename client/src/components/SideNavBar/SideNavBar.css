@@ -2,15 +2,40 @@
 .side-nav, .userinfo {
 	color: white;
 	width: 300px;
+	text-align: left;
+}
 
+.fa-linkedin-square{
+	color: #6fcefa;
+}
+
+/* .userView{
+	text-align: center !important;
+} */
+
+#userinfo{
+	display: inline-block;
+	text-align: center !important;
+}
+
+.circle img{
+	display: inline-block;
+	text-align: center !important;
+	margin: 0;
+}
+
+.profileButton {
+	margin-left: 50px;
 }
 
 SideNavItem{
 	color:white;
+	text-align: left;
 }
 
 #slide-out {
 	color: #6fcefa;
+	opacity: 0.9;
 }
 
 #css {
@@ -18,12 +43,38 @@ SideNavItem{
 	background-color: #6fcefa;
 }
 
-.fa-linkedin-square{
-	color: #6fcefa;
-}
-#linkedin{
+#linkedin {
 	color: white !important;
 }
+
 a{
-	color: white;
+	color: white !important;
+
+}
+
+.fa-linkedin-square {
+	color: white !important;
+}
+
+.fa-github-alt{
+	color: white !important;
+}
+
+.fa-link{
+	color: white !important;
+}
+
+.style13{
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+	max-width: 75%;
+}
+
+h5{
+	text-align: center;
+}
+
+.p{
+	text-align: left;
 }
