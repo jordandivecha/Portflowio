@@ -69,7 +69,7 @@ authButton() {
 }
 
   loadProfileCards () {
-
+ if (this.state.authenticated === true){
     var userposty2= this.state.userposts.slice(0).reverse().map(posty =>
       (<PortflowioCard
         postImage = {posty.postImage}
@@ -82,7 +82,7 @@ authButton() {
     );
     return userposty2;
 }
-
+}
 
 
   render(){
