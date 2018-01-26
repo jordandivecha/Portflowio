@@ -14,7 +14,7 @@ module.exports = {
 	findById: function(req, res) {
 		db.Post
 				.findOne(
-					{ 'creator': ObjectId(req.params.userid)})
+					{'creator': ObjectId(req.params.userid)})
 					.then(user => res.json(user))
 					.catch(err=> res.status(422).json(err));
 	},
