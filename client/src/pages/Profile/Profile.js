@@ -16,7 +16,8 @@ export default withAuth(class Profile extends React.Component{
 super(props);
     this.state ={
       user:{},
-      authenticated: true
+      authenticated: true,
+      userposts: []
     }
 
     console.log(props);
@@ -35,16 +36,46 @@ if (this.state.authenticated){
 
   var email= tokenstuff.idToken.claims.email;
   console.log("email");
+
   API.userFindByEmail(email)
   .then(res => {
-    console.log(res);
     this.setState({user: res.data});
   })
   .catch(err => console.log(err));
 };
+
+console.log(this.state.user._id);
+
+
+}
+
+
+componentDidUpdate (){
+
+  // if(this.state.user._id){
+  // API.getPostsById(this.state.user._id)
+  // .then(res => this.setState({userposts: [res.data]}))
+  // .catch(err=>console.log(err));
+  //
+  //
+  // }
+}
+
+
+loadprofilecards(){
+
+ var userposty2= this.state.userposts.slice(0).reverse().map(posty =>
+  (<PortflowioCard
+    postImage = {posty.postImage}
+    website={posty.website}
+    creator={posty.creator}
+    project={posty.project}
+    description = {posty.description}
+    title= {posty.title}
+  />)
+);
+return userposty2;
 };
-
-
 
   render(){
     return(
@@ -64,7 +95,11 @@ if (this.state.authenticated){
           id={this.state.user._id}
 
         />
-    </div>
+
+
+
+  </div>
+
   );
 
   }

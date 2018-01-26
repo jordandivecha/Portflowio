@@ -1,5 +1,5 @@
 const db = require("../models");
-
+var ObjectId = require('mongodb').ObjectId;
 // Methods for postController
 
 module.exports = {
@@ -13,9 +13,10 @@ module.exports = {
 
 	findById: function(req, res) {
 		db.Post
-    		.findById(req.params.id)
-    		.then(dbModel => res.json(dbModel))
-    		.catch(err => res.status(422).json(err));
+				.findOne(
+					{ 'creator': ObjectId(req.params.userid)})
+					.then(user => res.json(user))
+					.catch(err=> res.status(422).json(err));
 	},
 
 	create: function(req, res) {

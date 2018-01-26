@@ -20,7 +20,7 @@ function onAuthRequired({history}) {
 
 const config = {
   issuer: 'https://dev-395184.oktapreview.com/oauth2/default',
-  redirect_uri: 'https://portflowio.herokuapp.com/implicit/callback',
+  redirect_uri: 'http://localhost:3000/implicit/callback',
   client_id: "0oadot4zoxzmT4EZh0h7",
   scope: 'openid profile email'
 

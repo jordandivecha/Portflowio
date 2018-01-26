@@ -23,11 +23,15 @@ export default {
 
   postCreate: function (postobj){
 
-      return axios.post("/api/post", postobj);
+      return axios.post("/api/post/", postobj);
   },
 
   getAllPosts: function (){
-    return axios.get("/api/post");
+    return axios.get("/api/post/");
+  },
+
+  getPostsById: function (userid){
+    return axios.get("/api/post/"+userid);
   }
 
 };
