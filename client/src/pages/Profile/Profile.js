@@ -10,6 +10,7 @@ import SideNavBar from "../../components/SideNavBar";
 import API from "../../utils/API.js";
 import { withAuth } from '@okta/okta-react';
 
+
 export default withAuth(class Profile extends React.Component{
   constructor(props){
 
@@ -17,7 +18,8 @@ super(props);
     this.state ={
       user:{},
       authenticated: true,
-      userposts: []
+      userposts: [],
+      profile: true
     }
 
     console.log(props);
@@ -31,51 +33,45 @@ super(props);
 
 
 componentDidMount (){
-if (this.state.authenticated){
+
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
-  console.log("email");
 
   API.userFindByEmail(email)
   .then(res => {
     this.setState({user: res.data});
   })
   .catch(err => console.log(err));
-};
-
-console.log(this.state.user._id);
-
 
 }
-
 
 componentDidUpdate (){
+  API.getPostsById(this.state.user._id)
+  .then(res => this.setState({userposts: [res.data]}))
+  .catch(err=>console.log(err));
 
-  // if(this.state.user._id){
-  // API.getPostsById(this.state.user._id)
-  // .then(res => this.setState({userposts: [res.data]}))
-  // .catch(err=>console.log(err));
-  //
-  //
-  // }
 }
 
 
-loadprofilecards(){
 
- var userposty2= this.state.userposts.slice(0).reverse().map(posty =>
-  (<PortflowioCard
-    postImage = {posty.postImage}
-    website={posty.website}
-    creator={posty.creator}
-    project={posty.project}
-    description = {posty.description}
-    title= {posty.title}
-  />)
-);
-return userposty2;
-};
+
+  loadProfileCards () {
+
+    var userposty2= this.state.userposts.slice(0).reverse().map(posty =>
+      (<PortflowioCard
+        postImage = {posty.postImage}
+        website={posty.website}
+        creator={posty.creator}
+        project={posty.project}
+        description = {posty.description}
+        title= {posty.title}
+      />)
+    );
+    return userposty2;
+}
+
+
 
   render(){
     return(
@@ -96,7 +92,7 @@ return userposty2;
 
         />
 
-
+      {this.state.profile ? this.loadProfileCards(): null}
 
   </div>
 

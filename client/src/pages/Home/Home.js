@@ -7,7 +7,7 @@ import Home from "../../pages/Home";
 import Header from "../../components/Header";
 import PopChips from "../../components/PopChips";
 import PortflowioCard from "../../components/Cards";
-
+import Feed from "../../components/Feed";
 export default withAuth(class Home extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,8 @@ export default withAuth(class Home extends Component {
       authenticated: null,
       posts: [],
       user: {},
-      userId:""
+      userId:"",
+      profile: false
     };
     this.checkAuthentication = this.checkAuthentication.bind(this);
     this.checkAuthentication();
@@ -66,6 +67,8 @@ this.getUserInfo();
           likes: this.state.user.likes
         };
 
+        localStorage.setItem("_id", this.state.user._id);
+
     if(!this.state.user._id){
         API.userCreate(userauthobj)
         .then(function (status, res){
@@ -91,6 +94,7 @@ componentDidUpdate(){
 }
 
 loadallcards(){
+
  var posts = this.state.posts.slice(0).reverse().map(post =>
   (<PortflowioCard
     postImage = {post.postImage}
@@ -121,7 +125,15 @@ findAuthorbyId(id){
     }
   }
 
+  cardholder(){
+    if(this.state.profile == false){
+      this.loadallcards();
+      console.log("ok");
+    }
+  }
+
 render(){
+
 
     return(
 
@@ -139,11 +151,10 @@ render(){
 
         {this.authButton()}
 
-          <div className = "postHolder">
+        {(this.state.profile ===false) ? this.loadallcards():'null'}
 
-            {this.loadallcards()}
 
-          </div>
+
 
         </div>
 );
