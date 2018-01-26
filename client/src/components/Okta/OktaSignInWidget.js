@@ -4,7 +4,7 @@ import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 import '@okta/okta-signin-widget/dist/css/okta-theme.css';
 
-var redirect_uri = 'https:/portflowio.herokuapp.com/implicit/callback';
+var redirect_uri = 'https://portflowio.herokuapp.com/implicit/callback';
 export default class OktaSignInWidget extends Component {
   componentDidMount() {
     const el = ReactDOM.findDOMNode(this);
