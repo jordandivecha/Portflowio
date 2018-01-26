@@ -96,14 +96,14 @@ componentDidUpdate(){
 loadallcards(){
 
  var posts = this.state.posts.slice(0).reverse().map(post =>
-  (<PortflowioCard
+  (<div className = "allcards"><PortflowioCard
     postImage = {post.postImage}
     website={post.website}
     creator={post.creator}
     project={post.project}
     description = {post.description}
     title= {post.title}
-  />)
+  /></div>)
 );
 return posts;
 };
@@ -125,12 +125,7 @@ findAuthorbyId(id){
     }
   }
 
-  cardholder(){
-    if(this.state.profile == false){
-      this.loadallcards();
-      console.log("ok");
-    }
-  }
+
 
 render(){
 
@@ -151,8 +146,7 @@ render(){
 
         {this.authButton()}
 
-        {(this.state.profile ===false) ? this.loadallcards():'null'}
-
+        {this.loadallcards()}
 
 
 

@@ -20,7 +20,7 @@ module.exports = {
 	},
 
 	create: function(req, res) {
-		console.log(req.body);
+		console.log(req.body, "yo");
     	db.Post
     		.create(req.body)
     		.then(dbModel => res.json(dbModel))

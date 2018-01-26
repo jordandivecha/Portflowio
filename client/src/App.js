@@ -30,6 +30,7 @@ class App extends Component {
 
 
 
+
   render() {
     return (
       <Router>
@@ -41,10 +42,10 @@ class App extends Component {
                     >
 
 
-            <Route path='/' component={Home}/>
+            <Route path='/' exact={true}component={Home}/>
              <Route path='/login' render={()=><Login baseUrl="https://dev-395184.oktapreview.com"/>} />
              <SecureRoute path='/protected' component={Protected}/>
-             <SecureRoute path='/profile' component={Profile}/>
+             <SecureRoute path='/profile' render= {()=><Profile/>}/>
            <Route path='/implicit/callback' component={ImplicitCallback}/>
            </Security>
          </div>

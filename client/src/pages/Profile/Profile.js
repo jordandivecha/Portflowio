@@ -34,9 +34,11 @@ super(props);
 
 componentDidMount (){
 
+
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
+
 
   API.userFindByEmail(email)
   .then(res => {
@@ -54,7 +56,16 @@ componentDidUpdate (){
 }
 
 
+authButton() {
+  if (this.state.authenticated){
+  return(
+    <button type="button" className="btn btn-info right auth" onClick={this.props.auth.logout}>Logout</button>);
+  }
+  else{
+    return(<button type="button" className="btn btn-info right auth" onClick={this.props.auth.login}>Login</button>);
 
+  }
+}
 
   loadProfileCards () {
 
@@ -76,7 +87,17 @@ componentDidUpdate (){
   render(){
     return(
       <div className="profileholder">
+        <Header id="headerHome" />
+        <GlobalNav
+          button= {this.authButton}
+          authenticated = {this.state.authenticated}
+          creator = {this.state.user._id}
 
+          >
+
+        </GlobalNav>
+
+        {this.authButton()}
         <SideNavBar
           firstName={this.state.user.firstName}
           lastName={this.state.user.lastName}
@@ -92,7 +113,9 @@ componentDidUpdate (){
 
         />
 
-      {this.state.profile ? this.loadProfileCards(): null}
+      <div className = "profilecards">
+      {this.loadProfileCards()}
+    </div>
 
   </div>
 
