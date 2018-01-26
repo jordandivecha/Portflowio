@@ -34,7 +34,7 @@ super(props);
 
 componentDidMount (){
 
-
+if(this.state.authenticated === true){
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
@@ -46,6 +46,7 @@ componentDidMount (){
   })
   .catch(err => console.log(err));
 
+}
 }
 
 componentDidUpdate (){

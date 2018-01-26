@@ -28,7 +28,7 @@ console.log(props);
 };
 
 componentDidMount(){
-if (this.props.authenticated){
+if (this.props.authenticated===true){
 
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 

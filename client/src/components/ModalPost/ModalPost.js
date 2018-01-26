@@ -15,7 +15,7 @@ super (props);
 
 this.state ={
     title: "",
-    creator: '5a6986174d15fb04cc3ddf04',
+    creator: this.props.creator,
     description: "",
     website: "",
     project: this.props.project,
