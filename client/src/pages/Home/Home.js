@@ -15,7 +15,10 @@ export default withAuth(class Home extends Component {
     super(props);
     this.state = {
       authenticated: null,
-      posts: []};
+      posts: [],
+      user: {},
+      userId:""
+    };
     this.checkAuthentication = this.checkAuthentication.bind(this);
     this.checkAuthentication();
   }
@@ -44,36 +47,42 @@ this.getUserInfo();
        )
       .then (function (response) {
         console.log (response.data);
+
+        API.userFindByEmail(response.data.email)
+        .then(res => this.setState({user: res.data}))
+        .catch(err => console.log(err));
+
         var userauthobj = {
           firstName: response.data.given_name,
           lastName: response.data.family_name,
           email: response.data.email,
-          userImage: "www.cool.com",
-          password: "yay",
-          username: "",
-          github: "somewebsite.com",
-          linkedin: "",
-          website: "",
-          bio: "",
-          followers: [],
-          following: [],
-          likes: [],
-          posts: []
+          userImage: this.state.user.userImage,
+          password: this.state.user.password,
+          username: this.state.user.username,
+          github: this.state.user.github,
+          linkedin: this.state.user.linkedin,
+          website: this.state.user.website,
+          bio: this.state.user.bio,
+          followers: this.state.user.followers,
+          following: this.state.user.following,
+          likes: this.state.user.likes
         };
 
+    if(!this.state.user._id){
         API.userCreate(userauthobj)
         .then(function (status, res){
           console.log(status, res);
 
-        });
+        })
 
-
-      })
-      .catch(err => console.log(err));
-
-
-  }
+        .catch(err => console.log(err));
 }
+
+}).catch(err=> console.log(err));
+
+}
+}
+
 
 componentDidMount(){
   API.getAllPosts()
@@ -81,19 +90,23 @@ componentDidMount(){
   .catch(err=>console.log(err));
 
 
+
+
 }
 
-
-// loadAllCards(){
-//
-//   const cards = this.state.posts.map(element =>
-//    (<PortflowioCard
-//
-//      />));
-//      return cards;
-//
-//
-// };
+loadcards(){
+ var posts = this.state.posts.slice(0).reverse().map(post =>
+  (<PortflowioCard
+    postImage = {post.postImage}
+    website={post.website}
+    creator={post.creator}
+    project={post.project}
+    description = {post.description}
+    title= {post.title}
+  />)
+);
+return posts;
+};
 findAuthorbyId(id){
   API.userFindById(id)
   .then(res => res.data._id)
@@ -119,7 +132,10 @@ findAuthorbyId(id){
 
       <GlobalNav
         button= {this.authButton}
-        authenticated = {this.state.authenticated}>
+        authenticated = {this.state.authenticated}
+        creator = {this.state.user._id}
+        loadcards= {this.loadcards}
+        >
 
       </GlobalNav>
 
@@ -129,19 +145,8 @@ findAuthorbyId(id){
       <PopChips/>
 
         <div className = "postHolder">
+          {this.loadcards()}
 
-        {(this.state.posts).slice(0).reverse().map(post => (
-          <PortflowioCard
-            postImage = {post.postImage}
-            website={post.website}
-            creator={post.creator}
-            project={post.project}
-            description = {post.description}
-            title= {post.title}
-            findauthor={this.findAuthorbyId}
-
-          />
-        ))}
     </div>
   </div>
 

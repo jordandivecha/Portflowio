@@ -15,31 +15,20 @@ super (props);
 
 this.state ={
     title: "",
-    creator: "",
+    creator: this.props.creator,
     description: "",
     website: "",
-    project: "",
+    project: this.props.project,
     tags: [],
-    postImage: ""
+    postImage: this.props.userImage
 };
 console.log(props.authenticated);
 }
 
-componentDidMount (){
-if(localStorage.getItem("okta-token-storage").idToken){
-  var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
-
-  var email= tokenstuff.idToken.claims.email;
-  console.log("got the token");
-  API.userFindByEmail(email)
-  .then(res => {
-    console.log(res);
-    this.setState({creator: res.data._id});
-  })
-  .catch(err => console.log(err));
+componentDidUpdate (){
 
 }
-};
+
 handleInputChange = event => {
   const { name, value } = event.target;
   this.setState({
@@ -53,7 +42,7 @@ handleInputChangeCheckbox = event => {
   };
 
 handleFormSubmit = event => {
-console.log(this.state);
+
       API.postCreate({
         title: this.state.title,
         creator: this.state.creator,
@@ -66,8 +55,11 @@ console.log(this.state);
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
 
+        this.props.loadcards();
 
-}
+
+};
+
   makeImage =(result) => {
     this.setState({postImage: result.filesUploaded[0].url})
   };
@@ -79,9 +71,9 @@ console.log(this.state);
     	header= 'Tell your followers about your project.'
     	trigger={<Button id="PostBtn">Post</Button>}
       actions={
-        <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Submit</Button>
+        <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Submit</Button>}
 
-      }>
+      >
 
       <Row>
   		<Input name = "title" placeholder="Title" s={6} label="Title" onChange={this.handleInputChange}/>
@@ -114,4 +106,5 @@ console.log(this.state);
 );
 }
 }
+
 export default ModalPost;

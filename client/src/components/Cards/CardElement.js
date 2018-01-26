@@ -12,10 +12,11 @@ const PortflowioCard = props => (
 
 	<Card className='card-image CardElement'
 		header={<CardTitle image={props.postImage}></CardTitle>}
-		actions={[<span>{props.title} Created by {props.creator.username} <br/> <a href={props.website}>Website</a>
+		actions={[<span>{props.title} Created by {props.creator}<br/> <a href={props.website}>Website</a>
 		<a href={props.project}>Project</a></span>]}>
 
-		Description: {props.description}
+		<p>Description:</p>
+		<p>{props.description}</p>
 	</Card>
 	);
 //description above is not showing up
