@@ -4,3 +4,14 @@
   float: right;
 
 }
+
+.HomeCards {
+	width: 90%;
+    margin: 0 auto;
+}
+
+.auth {
+	float: left !important;
+	font-family: 'Text Me One', sans-serif;
+
+}

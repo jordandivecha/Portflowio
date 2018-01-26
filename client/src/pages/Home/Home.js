@@ -4,6 +4,7 @@ import axios from 'axios';
 import GlobalNav from "../../components/GlobalNav";
 import API from "../../utils/API.js";
 import Home from "../../pages/Home";
+import "./Home.css";
 import Header from "../../components/Header";
 import PopChips from "../../components/PopChips";
 import PortflowioCard from "../../components/Cards";
@@ -146,7 +147,11 @@ render(){
 
         {this.authButton()}
 
+        <div className = "HomeCards">
+
         {this.loadallcards()}
+
+        </div>
 
 
 
