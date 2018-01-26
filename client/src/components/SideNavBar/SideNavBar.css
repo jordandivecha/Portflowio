@@ -35,7 +35,7 @@ SideNavItem{
 
 #slide-out {
 	color: #6fcefa;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 #css {
@@ -77,4 +77,8 @@ h5{
 
 .p{
 	text-align: left;
+}
+
+.userView {
+	text-align: center;
 }
