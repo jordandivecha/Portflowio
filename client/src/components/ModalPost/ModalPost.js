@@ -55,7 +55,6 @@ handleFormSubmit = event => {
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
 
-        this.props.loadcards();
 
 
 };

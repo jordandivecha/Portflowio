@@ -40,7 +40,7 @@ module.exports = {
 
     db.User.findOneAndUpdate(
 			{ '_id': ObjectId(req.params.userid)},
-			{$set: req.body},
+			{$set: req.body}
 			)
 		.then(user =>res.json(user))
 		.catch(err => res.status(422).json(err));

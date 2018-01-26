@@ -7,6 +7,7 @@ import "./GlobalNav.css"
 class GlobalNav extends React.Component{
   constructor(props){
     super(props);
+
     console.log(props);
     this.state = {
 
@@ -24,7 +25,7 @@ class GlobalNav extends React.Component{
           <ModalPost
             authenticated= {this.props.authenticated}
             creator={this.props.creator}
-            loadcards= {this.props.loadcards}/>
+            />
 
 
           </ul>

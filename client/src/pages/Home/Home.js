@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 import axios from 'axios';
 import GlobalNav from "../../components/GlobalNav";
@@ -8,7 +7,6 @@ import Home from "../../pages/Home";
 import Header from "../../components/Header";
 import PopChips from "../../components/PopChips";
 import PortflowioCard from "../../components/Cards";
-
 
 export default withAuth(class Home extends Component {
   constructor(props) {
@@ -84,17 +82,15 @@ this.getUserInfo();
 }
 
 
-componentDidMount(){
+componentDidUpdate(){
   API.getAllPosts()
   .then(res => this.setState({posts: res.data}))
   .catch(err=>console.log(err));
 
 
-
-
 }
 
-loadcards(){
+loadallcards(){
  var posts = this.state.posts.slice(0).reverse().map(post =>
   (<PortflowioCard
     postImage = {post.postImage}
@@ -107,6 +103,7 @@ loadcards(){
 );
 return posts;
 };
+
 findAuthorbyId(id){
   API.userFindById(id)
   .then(res => res.data._id)
@@ -124,35 +121,31 @@ findAuthorbyId(id){
     }
   }
 
-  render() {
+render(){
+
     return(
 
-    <div className="center">
-      <Header id="headerHome" />
+      <div className="center">
+        <Header id="headerHome" />
 
-      <GlobalNav
-        button= {this.authButton}
-        authenticated = {this.state.authenticated}
-        creator = {this.state.user._id}
-        loadcards= {this.loadcards}
-        >
+        <GlobalNav
+          button= {this.authButton}
+          authenticated = {this.state.authenticated}
+          creator = {this.state.user._id}
 
-      </GlobalNav>
+          >
 
-      {this.authButton()}
+        </GlobalNav>
 
+        {this.authButton()}
 
-      <PopChips/>
+          <div className = "postHolder">
 
-        <div className = "postHolder">
-          {this.loadcards()}
+            {this.loadallcards()}
 
-    </div>
-  </div>
+          </div>
 
-
-
-
-    );
-  }
+        </div>
+);
+}
 });
