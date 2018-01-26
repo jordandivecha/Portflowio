@@ -16,12 +16,12 @@
 #userinfo{
 	display: inline-block;
 	text-align: center !important;
+
 }
 
-.circle img{
-	display: inline-block;
-	text-align: center !important;
-	margin: 0;
+img.circle {
+	margin: 0 auto !important;
+	max-height: 250px !important;
 }
 
 .profileButton {
@@ -49,19 +49,22 @@ SideNavItem{
 
 a{
 	color: white !important;
+	font-size: 18px !important;
+	
 
 }
 
 .fa-linkedin-square {
-	color: white !important;
+	color: lightblue !important;
 }
 
 .fa-github-alt{
-	color: white !important;
+	color: lightgrey !important;
 }
 
+
 .fa-link{
-	color: white !important;
+	color: orange !important;
 }
 
 .style13{

@@ -47,10 +47,10 @@ class SideNavBar extends React.Component {
           authenticated = {this.props.authenticated}
 					id={this.props.id}/>
 					<hr className="style13"/>
-				<SideNavItem  id="linkedin" href={this.props.linkedin}><i className="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
-				<SideNavItem id="github" href={this.props.github}><i className="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
-				<SideNavItem id="portfolio" href={this.props.website}><i className="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem> <hr className="style13"/>
-				<SideNavItem id="about"><h5>About</h5><p>{this.props.bio}</p></SideNavItem>
+				<SideNavItem  id="linkedin" href="'https://'+{this.props.linkedin}"><i className="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
+				<SideNavItem id="github" href="'https://'+{this.props.github}"><i className="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
+				<SideNavItem id="portfolio" href="'https://'+{this.props.website}"><i className="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem> <hr className="style13"/>
+				<SideNavItem id="about"><h5 className="center-align">About</h5><p className="center">{this.props.bio}</p></SideNavItem>
 				</SideNav>
 
 );

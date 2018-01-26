@@ -10,21 +10,20 @@ import {Card, CardTitle} from "react-materialize";
 
 const PortflowioCard = props => (
 
-	
 
-	<Card className='card-image CardElement'
+
+	<Card className='card-image CardElement center-align'
 		header={<CardTitle image={props.postImage}></CardTitle>}
-		actions={[<span>{props.title} Created by {props.creator}<br/> <a href={props.website}>Website</a>
-		<a href={props.project}>Project</a></span>]}>
-
-		<p>Description:</p>
-		<p>{props.description}</p>
+		actions={[<span classsName= "center"><a className="blue-text" href={props.website}>Website</a>
+	<a className="blue-text" href={props.project}>Project</a></span>]}>
+		<h1 className = "center">{props.title}</h1>
+		<h3 className= "center">{props.description}</h3>
 	</Card>
 
 
-	
 
-	
+
+
 	);
 //description above is not showing up
 
