@@ -82,3 +82,7 @@ h5{
 .userView {
 	text-align: center;
 }
+
+#linkedin, #github, #portfolio {
+	font-family: 'Text Me One', sans-serif;
+}

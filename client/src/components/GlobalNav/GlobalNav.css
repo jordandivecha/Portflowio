@@ -9,5 +9,6 @@
 	background-color: transparent;
 	border: white;
 	font-family: 'Text Me One', sans-serif;
+    text-transform: capitalize;
 
 }
