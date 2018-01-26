@@ -69,7 +69,7 @@ authButton() {
 }
 
   loadProfileCards () {
- if (this.state.authenticated === true){
+ if (this.state.userposts !=== null){
     var userposty2= this.state.userposts.slice(0).reverse().map(posty =>
       (<PortflowioCard
         postImage = {posty.postImage}
