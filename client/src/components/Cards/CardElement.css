@@ -4,5 +4,18 @@
   float: left;
   clear: right;
   margin: 20px;
+  opacity: 1 !important;
+}
 
+.card-image {
+	max-height: 50%;
+	opacity: 1 !important;
+}
+
+.Card {
+	opacity: 1 !important;
+}
+
+.img {
+	max-height: 200px;
 }
