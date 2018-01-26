@@ -26,7 +26,7 @@ console.log(props.authenticated);
 }
 
 componentDidMount (){
-if(localStorage.getItem("okta-token-storage") !== null){
+if(localStorage.getItem("okta-token-storage").idToken){
   var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
 
   var email= tokenstuff.idToken.claims.email;
