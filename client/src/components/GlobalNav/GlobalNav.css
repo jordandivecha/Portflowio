@@ -4,3 +4,10 @@
   float: left !important;
   clear: none;
 }
+
+.btn-info {
+	background-color: transparent;
+	border: white;
+	font-family: 'Text Me One', sans-serif;
+
+}

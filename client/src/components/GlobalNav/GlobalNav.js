@@ -20,7 +20,7 @@ class GlobalNav extends React.Component{
     return(
       <ul className= "right globalNav">
         <Link to="/"><button type="button" className= "btn btn-info">Home</button></Link>
-        <Link to ="/profile"><button type="button" className= "btn btn-danger">Profile</button></Link>
+        <Link to ="/profile"><button type="button" className= "btn btn-info">Profile</button></Link>
 
           <ModalPost
             authenticated= {this.props.authenticated}
