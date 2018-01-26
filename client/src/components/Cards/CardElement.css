@@ -9,11 +9,11 @@
 
 .card-image {
 	max-height: 50%;
-	opacity: 0.8 !important;
+	opacity: 0.9 !important;
 }
 
 .Card {
-	opacity: 1 !important;
+	opacity: 0.8 !important;
 }
 
 .img {
