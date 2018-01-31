@@ -12,39 +12,45 @@ import {withAuth} from '@okta/okta-react';
 
 export default withAuth(class Profile extends React.Component {
   constructor(props) {
-
     super(props);
     this.state = {
       user: {},
       authenticated: true,
       userposts: [],
       profile: true
-    }
+    };
+
+
   }
 
 
-  componentDidMount() {
+  componentWillMount() {
 
     if (this.state.authenticated === true) {
       var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
-
       var email = tokenstuff.idToken.claims.email;
       API.userFindByEmail(email).then(res => {
         this.setState({user: res.data});
       }).catch(err => console.log(err));
-
-
+      // setTimeout(function () {
+      //   API.getPostsById(this.state.user._id).then(res => this.setState({
+      //   userposts: [res.data]
+      // })).catch(err => console.log(err));}.bind(this), 4000);
+  }
     }
+
+  componentDidUpdate(prevProps, prevState){
+      API.getPostsById(this.state.user._id).then(res => this.setState({
+      userposts: res.data
+    })).catch(err => console.log(err));
+
+
   }
 
-componentDidUpdate(){
-  API.getPostsById(this.state.user._id).then(res => this.setState({
-    userposts: [res.data]
-  })).catch(err => console.log(err));
-}
-componentWillReceiveProps (){
 
-}
+
+
+
 
   authButton() {
     if (this.state.authenticated) {
@@ -58,15 +64,16 @@ componentWillReceiveProps (){
   loadProfileCards() {
     if (this.state.userposts[0] !== null){
       var userposty2 = this.state.userposts.slice(0).reverse().map(posty => (
-        <PortflowioCard postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title}/>));
+        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title}/>));
       return userposty2;
     }
 }
 
   render() {
+    if (this.state.user !== null){
     return (<div className="profileholder">
       <Header id="headerHome"/>
-      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.props.creator}></GlobalNav>
+      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.state.user._id}></GlobalNav>
 
       {this.authButton()}
       <SideNavBar firstName={this.state.user.firstName} lastName={this.state.user.lastName} email={this.state.user.email} image={this.state.user.userImage} bio={this.state.user.bio} linkedin={this.state.user.linkedin} website={this.state.user.website} github={this.state.user.github} username={this.state.user.username} authenticated={this.state.authenticated} id={this.state.user._id}/>
@@ -80,4 +87,5 @@ componentWillReceiveProps (){
     </div>);
 
   }
+}
 });

@@ -15,12 +15,28 @@ export default withAuth(class Home extends Component {
     this.state = {
       authenticated: null,
       posts: [],
-      user: {},
+      user: {
+        _id: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        userImage: "",
+        password: "",
+        username: "",
+        github: " ",
+        linkedin: "",
+        website: "",
+        bio: "",
+        followers: [],
+        following: [],
+        likes: []
+      },
       userId:"",
       profile: false
     };
     this.checkAuthentication = this.checkAuthentication.bind(this);
     this.checkAuthentication();
+
   }
 
   async checkAuthentication() {
@@ -28,34 +44,44 @@ export default withAuth(class Home extends Component {
     if (authenticated !== this.state.authenticated) {
       this.setState({ authenticated })
       ;
-this.getUserInfo();
+
     }
+  this.getUserInfo();
   }
 
   componentDidUpdate() {
     this.checkAuthentication();
+
   }
 
   getUserInfo () {
     if (this.state.authenticated){
 
       var tokenstuff = (JSON.parse((localStorage.getItem("okta-token-storage")), null, 2));
-     let AuthStr = 'Bearer ' + tokenstuff.accessToken.accessToken;
-      axios.get ('https://dev-395184.oktapreview.com/oauth2/v1/userinfo',
-      {headers: {"Authorization": AuthStr}}, {timeout: 1000}
+     var  email = tokenstuff.idToken.claims.email;
+     var name = (tokenstuff.idToken.claims.name).split(" ");
+     var username = (tokenstuff.idToken.claims.email).split("@");
+     this.setState({user:
+       {firstName: name[0],
+       email: email,
+       lastName: name[1],
+       username: "@"+name[0]+"."+name[1],
+       userImage: 'https://images.vexels.com/media/users/3/145370/isolated/preview/ba70e66bd60f958e1e948f9d5917bc9c-waterdrop-sharp-glimpse-illustration-by-vexels.png',
+       github: "https://github.com",
+       linkedin: "https://linkedin.com",
+       bio: "Hi, I'm new here.",
+       website: "portflowio.herokuapp.com"
 
-       )
-      .then (function (response) {
-        console.log (response.data);
-
-        API.userFindByEmail(response.data.email)
+     }
+     });
+        API.userFindByEmail(email)
         .then(res => this.setState({user: res.data}))
         .catch(err => console.log(err));
 
         var userauthobj = {
-          firstName: response.data.given_name,
-          lastName: response.data.family_name,
-          email: response.data.email,
+          firstName: this.state.user.firstName,
+          lastName: this.state.user.lastName,
+          email: email,
           userImage: this.state.user.userImage,
           password: this.state.user.password,
           username: this.state.user.username,
@@ -69,7 +95,7 @@ this.getUserInfo();
         };
 
         localStorage.setItem("_id", this.state.user._id);
-
+console.log(this.state.user._id);
     if(!this.state.user._id){
         API.userCreate(userauthobj)
         .then(function (status, res){
@@ -80,13 +106,12 @@ this.getUserInfo();
         .catch(err => console.log(err));
 }
 
-}).catch(err=> console.log(err));
-
-}
 }
 
+}
 
 componentDidUpdate(){
+
   API.getAllPosts()
   .then(res => this.setState({posts: res.data}))
   .catch(err=>console.log(err));
@@ -139,7 +164,7 @@ render(){
         <GlobalNav
           button= {this.authButton}
           authenticated = {this.state.authenticated}
-          creator = {this.state.user._id}
+          creator = {this.state.user? this.state.user._id:null}
 
           >
 

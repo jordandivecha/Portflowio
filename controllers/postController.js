@@ -12,17 +12,26 @@ module.exports = {
   	},
 
 	findById: function(req, res) {
+		var stringy = (req.params.userid).toString()
 		db.Post
-				.findOne(
-					{'creator': ObjectId(req.params.userid)})
-					.then(user => res.json(user))
+				.find(
+					{creator: ObjectId(stringy)})
+					.then(post => res.json(post))
 					.catch(err=> res.status(422).json(err));
 	},
 
 	create: function(req, res) {
-		console.log(req.body, "yo");
+
     	db.Post
-    		.create(req.body)
+    		.create({
+					title: req.body.title,
+					creator: ObjectId(req.body.creator),
+					description: req.body.description,
+					tags: req.body.tags,
+					website: req.body.website,
+					project: req.body.project,
+					postImage: req.body.postImage
+				})
     		.then(dbModel => res.json(dbModel))
     		.catch(err => res.status(422).json(err));
 	},
