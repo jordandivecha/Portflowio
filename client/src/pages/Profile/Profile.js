@@ -66,7 +66,7 @@ componentWillReceiveProps (){
   render() {
     return (<div className="profileholder">
       <Header id="headerHome"/>
-      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.state.user._id}></GlobalNav>
+      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.props.creator}></GlobalNav>
 
       {this.authButton()}
       <SideNavBar firstName={this.state.user.firstName} lastName={this.state.user.lastName} email={this.state.user.email} image={this.state.user.userImage} bio={this.state.user.bio} linkedin={this.state.user.linkedin} website={this.state.user.website} github={this.state.user.github} username={this.state.user.username} authenticated={this.state.authenticated} id={this.state.user._id}/>

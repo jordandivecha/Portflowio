@@ -5,6 +5,7 @@ import "./SideNavBar.css";
 import React from "react";
 import {SideNav, Button, SideNavItem} from "react-materialize";
 import ModalProfile from "../ModalProfile";
+import LinkBuilder from "../LinkBuilder";
 class SideNavBar extends React.Component {
 
 	constructor(props){
@@ -25,16 +26,12 @@ class SideNavBar extends React.Component {
 
 				  }}
 				>
-				<SideNavItem id="user-info" userView
-					user={
-						{
-						background:  '',
-						image: this.props.image,
-						name: this.props.firstName + " " + this.props.lastName,
-						email: this.props.email
-					}}
-					/>
-				<ModalProfile
+				<div className="user-info center">
+					<img className= "center profileimage" src={this.props.image}/>
+				 	<p>{this.props.firstName} {this.props.lastName}</p>
+					<p>{this.props.email}</p>
+					</div>
+				<ModalProfile className= "profilebtn"
 					firstName= {this.props.firstName}
           lastName={this.props.lastName}
           email={this.props.email}
@@ -47,10 +44,25 @@ class SideNavBar extends React.Component {
           authenticated = {this.props.authenticated}
 					id={this.props.id}/>
 					<hr className="style13"/>
-				<SideNavItem  id="linkedin" href={this.props.linkedin}><i className="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</SideNavItem>
-				<SideNavItem id="github" href={this.props.github}><i className="fa fa-github-alt" aria-hidden="true"></i>Github</SideNavItem>
-				<SideNavItem id="portfolio" href={this.props.website}><i className="fa fa-link" aria-hidden="true"></i>Portfolio</SideNavItem> <hr className="style13"/>
-				<SideNavItem id="about"><h5 className="center-align">About</h5><p className="center">{this.props.bio}</p></SideNavItem>
+					<div className = "center-align links">
+					<div><LinkBuilder
+							id = 'linkedin'
+							i = 'fa fa-linkedin-square'
+							title = "LinkedIn"
+							href = {this.props.linkedin}/></div>
+						<div><LinkBuilder
+									id = 'github'
+									i = 'fa fa-github-alt'
+									title = "Github"
+									href = {this.props.github}/></div>
+						<div><LinkBuilder
+							id = 'portfolio'
+							i = 'fa fa-link'
+							title = "Portfolio"
+							href = {this.props.website}/></div>
+					</div>
+					<hr className="style13"/>
+				<div id="about"><h5 className="center-align">About</h5><p className="center bio">{this.props.bio}</p></div>
 				</SideNav>
 
 );

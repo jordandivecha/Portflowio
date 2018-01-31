@@ -3,12 +3,14 @@
   margin-right: 20px;
   float: left !important;
   clear: none;
+
 }
 
 .btn-info {
-	background-color: transparent;
-	border: white;
-	font-family: 'Text Me One', sans-serif;
-    text-transform: capitalize;
+	background-color: transparent !important;
+	border: white !important;
+	font-family: 'Text Me One', sans-serif !important;
+  text-transform: capitalize !important;
+  font-size: 20px !important;
 
 }

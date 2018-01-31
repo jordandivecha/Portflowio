@@ -1,9 +1,6 @@
 /*  */
 
-.auth{
-  float: right;
 
-}
 
 .HomeCards {
 	width: 90%;
@@ -13,5 +10,6 @@
 .auth {
 	float: left !important;
 	font-family: 'Text Me One', sans-serif;
+  font-size: 20px;
 
 }

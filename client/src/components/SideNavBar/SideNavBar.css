@@ -13,20 +13,25 @@
 	text-align: center !important;
 } */
 
-#userinfo{
-	display: inline-block;
-	text-align: center !important;
+.user-info{
 
+font-size: 20px;
+font-family: 'Text Me One', sans-serif;
+color: white;
 }
 
-img.circle {
-	margin: 0 auto !important;
-	max-height: 250px !important;
+.profileimage{
+	max-height: 150px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
-.profileButton {
-	margin-left: 50px;
+.profilebtn{
+	margin: 0 auto;
+	color: black;
 }
+
 
 SideNavItem{
 	color:white;
@@ -43,28 +48,29 @@ SideNavItem{
 	background-color: #6fcefa;
 }
 
-#linkedin {
+#linkedin, #github, #portfolio {
 	color: white !important;
+	font-size: 20px !important;
 }
 
-a{
-	color: white !important;
-	font-size: 18px !important;
-	
 
-}
 
 .fa-linkedin-square {
 	color: lightblue !important;
+	font-size: 30px;
+	margin-right: 10px;
 }
 
 .fa-github-alt{
 	color: lightgrey !important;
+	font-size: 30px;
+	margin-right: 10px;
 }
-
 
 .fa-link{
 	color: orange !important;
+	font-size: 30px;
+	margin-right: 10px;
 }
 
 .style13{
@@ -76,14 +82,22 @@ a{
 
 h5{
 	text-align: center;
+	font-size: 40px;
+	font-family: 'Text Me One', sans-serif;
+	font-weight: bolder;
 }
 
-.p{
-	text-align: left;
+.bio{
+	font-size: 30px;
+	font-family: 'Text Me One', sans-serif;
+	color: white;
 }
+
 
 .userView {
 	text-align: center;
+	font-family: 'Text Me One', sans-serif;
+	font-size: 30px !important;
 }
 
 #linkedin, #github, #portfolio {
