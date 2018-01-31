@@ -29,7 +29,7 @@ class SideNavBar extends React.Component {
 				<div className="user-info center">
 					<img className= "center profileimage" src={this.props.image}/>
 				 	<p>{this.props.firstName} {this.props.lastName}</p>
-					<p>{this.props.email}</p>
+					<p>{this.props.username}</p>
 					</div>
 				<ModalProfile className= "profilebtn"
 					firstName= {this.props.firstName}
@@ -60,7 +60,15 @@ class SideNavBar extends React.Component {
 							i = 'fa fa-link'
 							title = "Portfolio"
 							href = {this.props.website}/></div>
-					</div>
+					
+					<div><LinkBuilder
+						id = 'email'
+						i = 'fa fa-envelope'
+						title = "E-mail"
+						href = {'mailto:'+this.props.email}/>
+				</div>
+			</div>
+
 					<hr className="style13"/>
 				<div id="about"><h5 className="center-align">About</h5><p className="center bio">{this.props.bio}</p></div>
 				</SideNav>

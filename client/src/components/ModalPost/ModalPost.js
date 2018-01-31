@@ -15,7 +15,7 @@ super (props);
 
 this.state ={
     title: "",
-    creator: this.props.creator,
+    creator: props.creator,
     description: "",
     website: "",
     project: "",
@@ -45,7 +45,7 @@ handleFormSubmit = event => {
 
       API.postCreate({
         title: this.state.title,
-        creator: this.state.creator,
+        creator: this.props.creator,
         description: this.state.description,
         tags: this.state.tags,
         website: this.state.website,
@@ -55,7 +55,7 @@ handleFormSubmit = event => {
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
 
-
+        this.setState(this.state);
 
 };
 

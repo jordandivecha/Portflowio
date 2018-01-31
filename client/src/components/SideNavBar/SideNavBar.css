@@ -48,12 +48,16 @@ SideNavItem{
 	background-color: #6fcefa;
 }
 
-#linkedin, #github, #portfolio {
+#linkedin, #github, #portfolio, #email{
 	color: white !important;
 	font-size: 20px !important;
 }
 
-
+.fa-envelope{
+	font-size: 30px;
+	margin-right: 10px;
+	color: coral !important;
+}
 
 .fa-linkedin-square {
 	color: lightblue !important;
@@ -100,6 +104,6 @@ h5{
 	font-size: 30px !important;
 }
 
-#linkedin, #github, #portfolio {
+#linkedin, #github, #portfolio, #email {
 	font-family: 'Text Me One', sans-serif;
 }
