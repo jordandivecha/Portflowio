@@ -6,21 +6,31 @@
 import React from "react";
 import "./CardElement.css";
 import {Card, CardTitle} from "react-materialize";
-
+import LinkBuilder from "../LinkBuilder";
+import LikeButton from "../LikeButton";
 
 const PortflowioCard = props => (
 
 
-
-	<Card className='card-image CardElement center-align'
-		header={<CardTitle image={props.postImage}></CardTitle>}
-		actions={[<span classsName= "center"><a className="blue-text" href={props.website}>Website</a>
-	<a className="blue-text" href={props.project}>Project</a></span>]}>
-		<h1 className = "center">{props.title}</h1>
-		<h3 className= "center">{props.description}</h3>
-	</Card>
-
-
+			<div class="card sticky-action ">
+				<div class="card-image">
+					<img alt={props.title}className= "actualcardimage"src={props.postImage}/>
+				</div>
+				<div class="card-content">
+					<p className="descrippar">{props.description}</p>
+				</div>
+				<div class="card-action">
+				<LinkBuilder
+						id = 'website'
+						title = "Website"
+						href = {props.website}/>
+				<LinkBuilder
+							id = 'project'
+							title = "Project"
+							href = {props.project}/>
+						<LikeButton className = "likebutton"/>
+				</div>
+			</div>
 
 
 

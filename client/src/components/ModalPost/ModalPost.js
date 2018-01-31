@@ -68,9 +68,9 @@ handleFormSubmit = event => {
 
     <Modal id = "Popout"
     	header= 'Tell your followers about your project.'
-    	trigger={<Button id="PostBtn">Post</Button>}
+    	trigger={<Button className="btn-info">Post</Button>}
       actions={
-        <Button  name="btn" id="submitBtn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Submit</Button>}
+        <Button  id="submitBtn" name="btn" className="btn btn-default" onClick={this.handleFormSubmit} modal="close" data-confirm="Are you sure you want to submit?" >Submit</Button>}
 
       >
 

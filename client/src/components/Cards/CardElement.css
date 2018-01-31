@@ -1,14 +1,48 @@
-.CardElement {
-  max-width: 300px;
-  height: 400px;
+.card {
+  max-width: 400px;
+  height: 500px;
   float: left;
   clear: right;
   margin: 20px;
-  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-bottom: 5px;
+  display: flex;
+  font-family: 'Text Me One', sans-serif;
 }
 
-.card-image {
-	max-height: 50%;
+.card > .card-image{
+  max-height: 70%;
+  overflow: scroll;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px !important;
+
+
+}
+
+.card-content{
+  padding-top: 10px !important;
+}
+
+
+.descrippar{
+  opacity: 1 !important;
+  font: black;
+  background: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: scroll;
+  text-align: center;
+}
+.card> .card-image > img {
+  max-width: 80%;
+  max-height: 100%;
+  opacity: 1 !important;
+  margin: 0 auto;
+
+}
+/* .card-image {
+	max-height: 40%;
 	opacity: 0.9 !important;
 }
 
@@ -16,6 +50,36 @@
 	opacity: 0.8 !important;
 }
 
-.img {
-	max-height: 200px;
+.actualcardimage {
+	height: 50% !important;
+} */
+
+#website, #project{
+  color: white !important;
+  margin: 0;
+  font-size: 20px !important;
+
+}
+#website{
+  margin-right: 10px !important;
+}
+
+#project{
+  margin-left: 10px !important;
+  margin-right: 30px !important;
+}
+.card-action{
+  margin-bottom: 5px;
+  background: rgba(0,0,0,0.7) !important;
+  margin-top: auto;
+  text-align: center;
+}
+.likebutton {
+  margin-top: -5px !important;
+
+}
+.likeybtn{
+  color: red;
+  font-size: 20px;
+  font-family: 'Text Me One', sans-serif;
 }

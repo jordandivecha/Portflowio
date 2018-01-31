@@ -3,14 +3,7 @@
 	overflow-y: auto;
 }
 
-#PostBtn {
-	/*z-index: 10;*/
-	background-color: transparent;
-	border: white;
-	font-family: 'Text Me One', sans-serif;
-	text-transform: capitalize;
 
-}
 
 #imageUpload {
 	max-width: 250px;
