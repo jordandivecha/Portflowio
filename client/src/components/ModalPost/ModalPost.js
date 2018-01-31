@@ -18,15 +18,15 @@ this.state ={
     creator: this.props.creator,
     description: "",
     website: "",
-    project: this.props.project,
+    project: "",
     tags: [],
-    postImage: this.props.userImage
+    postImage: ""
 };
 console.log(props.authenticated);
 }
 
-componentDidUpdate (){
-
+componentWillReceiveProps (props){
+this.setState({creator: props.creator});
 }
 
 handleInputChange = event => {
