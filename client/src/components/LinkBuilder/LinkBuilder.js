@@ -8,16 +8,17 @@ class LinkBuilder extends React.Component {
 
 
 linker (props) {
-  if (this.props.href.startsWith('https://') || this.props.href.startsWith('http://' || this.props.href.startsWith('mailto'))){
+  if (this.props.href.startsWith('https://') || this.props.href.startsWith('http://')){
     return (
-      <a id = {this.props.id} href = {this.props.href}><i className = {this.props.i}></i>{this.props.title}</a>
+      <a id = {this.props.id} target="_blank" href = {this.props.href}><i className = {this.props.i}></i>{this.props.title}</a>
     );
   }
+
   else{
 
     return(
 
-      <a id = {this.props.id} href = {'https://'+this.props.href} > <i className = {this.props.i}></i>{this.props.title}</a>
+      <a id = {this.props.id} target="_blank" href = {'https://'+this.props.href} > <i className = {this.props.i}></i>{this.props.title}</a>
     );
   }
 }
