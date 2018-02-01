@@ -65,12 +65,14 @@ export default withAuth(class Home extends Component {
        {firstName: name[0],
        email: email,
        lastName: name[1],
-       username: "@"+name[0]+"."+name[1],
+       username: email,
        userImage: 'https://images.vexels.com/media/users/3/145370/isolated/preview/ba70e66bd60f958e1e948f9d5917bc9c-waterdrop-sharp-glimpse-illustration-by-vexels.png',
        github: "https://github.com",
        linkedin: "https://linkedin.com",
        bio: "Hi, I'm new here.",
-       website: "portflowio.herokuapp.com"
+       website: "portflowio.herokuapp.com",
+       following: [],
+       likes: []
 
      }
      });
@@ -130,6 +132,9 @@ loadallcards(){
     description = {post.description}
     title= {post.title}
     tags={post.tags}
+    email={post.email}
+    id={post._id}
+    currentuser={this.state.user._id}
   /></div>)
 );
 return posts;
@@ -166,6 +171,7 @@ render(){
           button= {this.authButton}
           authenticated = {this.state.authenticated}
           creator = {this.state.user? this.state.user._id:null}
+          email= {this.state.user? this.state.user.email:null}
 
           >
 

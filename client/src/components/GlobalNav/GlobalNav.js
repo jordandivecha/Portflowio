@@ -25,6 +25,7 @@ class GlobalNav extends React.Component{
           <ModalPost
             authenticated= {this.props.authenticated}
             creator={this.props.creator}
+            email={this.props.email}
             />
 
 

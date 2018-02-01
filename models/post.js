@@ -8,6 +8,7 @@ var postSchema = new Schema({
   website: {type: String, required: false},
   project: {type: String, required: false},
   tags: [{type: String}],
+  email: {type: String},
   likeCount: {type: Number, default: 0},
   likedBy: [{type: Schema.Types.ObjectId, ref: 'User'}],
   description: {type: String, required: true}});
