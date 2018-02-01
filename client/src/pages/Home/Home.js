@@ -129,6 +129,7 @@ loadallcards(){
     project={post.project}
     description = {post.description}
     title= {post.title}
+    tags={post.tags}
   /></div>)
 );
 return posts;

@@ -33,6 +33,7 @@
   margin-top: 5px;
   overflow: scroll;
   text-align: center;
+  font-size: 18px !important;
 }
 .card> .card-image > img {
   max-width: 80%;
@@ -82,4 +83,11 @@
   color: red;
   font-size: 20px;
   font-family: 'Text Me One', sans-serif;
+}
+
+.chip{
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: lemonchiffon;
+
 }
