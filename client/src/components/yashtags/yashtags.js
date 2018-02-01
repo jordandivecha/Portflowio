@@ -4,35 +4,13 @@ import React from "react";
 import "./yashtags.css";
 import {Chip, Tag, Col, Row} from 'react-materialize'
 
-class Yash extends React.Component {
+const Yash =(props) => (
 
-	state = {
-		yashtag: ""
-	};
 
-	handleInputChange = event => {
-	const { name, value } = event.target;
-    	this.setState({
-     	 	yashtag: value
-    	});
-  	};
+				<Chip id="{props.id}">
+					#{props.tag}
+				</Chip>
+	);
 
-	render(){
-		return(
-	<form>
-		<div className="form-group">
-      		<input
-        		className="yashtag-input"
-        		type="text"
-        		value={this.state.yashtag}
-        		name="q"
-        		onChange={this.handleInputChange}
-						
-        	/>
-        	<Tag>{this.state.yashtag}</Tag>
-    	</div>
-	</form>
-	)};
-}
 
 export default Yash;

@@ -8,7 +8,7 @@ import "./CardElement.css";
 import {Card, CardTitle} from "react-materialize";
 import LinkBuilder from "../LinkBuilder";
 import LikeButton from "../LikeButton";
-
+import Yashtag from "../yashtags";
 const PortflowioCard = props => (
 
 
@@ -18,6 +18,14 @@ const PortflowioCard = props => (
 				</div>
 				<div class="card-content">
 					<p className="descrippar">{props.description}</p>
+				</div>
+				<div className="yashtagholder center">
+					{props.tags.map((el, i)=> (
+						<Yashtag
+							key= {i}
+							tag= {el}
+							id= {el} />
+					))}
 				</div>
 				<div class="card-action">
 				<LinkBuilder
@@ -30,6 +38,7 @@ const PortflowioCard = props => (
 							href = {props.project}/>
 						<LikeButton className = "likebutton"/>
 				</div>
+
 			</div>
 
 

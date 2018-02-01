@@ -28,8 +28,8 @@ class SideNavBar extends React.Component {
 				>
 				<div className="user-info center">
 					<img className= "center profileimage" src={this.props.image}/>
-				 	<p>{this.props.firstName} {this.props.lastName}</p>
-					<p>{this.props.username}</p>
+				 	<p id="name">{this.props.firstName} {this.props.lastName}</p>
+					<p id="username">{this.props.username}</p>
 					</div>
 				<ModalProfile className= "profilebtn"
 					firstName= {this.props.firstName}

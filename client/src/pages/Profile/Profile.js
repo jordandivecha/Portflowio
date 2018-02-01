@@ -64,7 +64,7 @@ export default withAuth(class Profile extends React.Component {
   loadProfileCards() {
     if (this.state.userposts[0] !== null){
       var userposty2 = this.state.userposts.slice(0).reverse().map(posty => (
-        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title}/>));
+        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags}/>));
       return userposty2;
     }
 }
