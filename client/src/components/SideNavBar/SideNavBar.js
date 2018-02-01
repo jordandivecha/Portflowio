@@ -60,14 +60,11 @@ class SideNavBar extends React.Component {
 							i = 'fa fa-link'
 							title = "Portfolio"
 							href = {this.props.website}/></div>
-					
-					<div><LinkBuilder
-						id = 'email'
-						i = 'fa fa-envelope'
-						title = "E-mail"
-						href = {'mailto:'+this.props.email}/>
+
+						<div>
+							<a id = 'email' target="_blank" href = {'mailto:'+this.props.email}><i className='fa fa-envelope'></i>E-mail</a>
+						</div>
 				</div>
-			</div>
 
 					<hr className="style13"/>
 				<div id="about"><h5 className="center-align">About</h5><p className="center bio">{this.props.bio}</p></div>
