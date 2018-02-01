@@ -1,0 +1,27 @@
+/* .logoimage {
+  padding-left: 500px;
+} */
+.profileholder{
+  padding-left: 300px;
+}
+
+.profileButton{
+  visibility: hidden;
+}
+
+.headerProfile{
+  max-height: 300px;
+}
+@media only screen and (max-width: 992px){
+  .profileholder{
+    padding-left: 0px;
+  }
+  .profileButton{
+    visibility: visible;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+}
+.profilecards{
+
+}

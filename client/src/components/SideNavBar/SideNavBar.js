@@ -6,6 +6,7 @@ import React from "react";
 import {SideNav, Button, SideNavItem} from "react-materialize";
 import ModalProfile from "../ModalProfile";
 import LinkBuilder from "../LinkBuilder";
+import Follow from "../Follow";
 class SideNavBar extends React.Component {
 
 	constructor(props){
@@ -31,7 +32,10 @@ class SideNavBar extends React.Component {
 				 	<p id="name">{this.props.firstName} {this.props.lastName}</p>
 					<p id="username">{this.props.username}</p>
 					</div>
-				<ModalProfile className= "profilebtn"
+					<div className= "center">
+				{this.props.other == true ?
+					<Follow follow={this.props.follow.bind(this)} id= {this.props.id} following={this.props.following}/>
+					:<ModalProfile className= "profilebtn"
 					firstName= {this.props.firstName}
           lastName={this.props.lastName}
           email={this.props.email}
@@ -42,7 +46,8 @@ class SideNavBar extends React.Component {
           github={this.props.github}
           username= {this.props.username}
           authenticated = {this.props.authenticated}
-					id={this.props.id}/>
+					id={this.props.id}/>}
+				</div>
 					<hr className="style13"/>
 					<div className = "center-align links">
 					<div><LinkBuilder

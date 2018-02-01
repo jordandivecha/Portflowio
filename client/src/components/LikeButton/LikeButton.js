@@ -1,4 +1,5 @@
 import React from "react";
+import API from "../../utils/API.js";
 class LikeButton extends React.Component {
   constructor(props) {
     super();
@@ -12,6 +13,7 @@ class LikeButton extends React.Component {
     this.setState({
       liked: !this.state.liked
     });
+
 
     // update db here, send to your likes
   }

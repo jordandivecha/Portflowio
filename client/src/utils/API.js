@@ -10,6 +10,11 @@ export default {
 
     return axios.get("/api/profile/"+userid);
   },
+  profileFindByEmail: function(username) {
+
+    return axios.get("/user/"+username);
+  },
+
 
   userUpdate: function(userid, object){
     console.log(userid);
@@ -32,6 +37,16 @@ export default {
 
   getPostsById: function (userid){
     return axios.get("/api/post/"+userid);
-  }
+  },
+
+  follow: function (userid, currentuser){
+    return axios.post("/user/"+userid, currentuser);
+  },
+
+  unfollow: function (userid, currentuser){
+
+    return axios.delete("/user/"+userid, {data: currentuser});
+  },
+  liked: function (id){}
 
 };

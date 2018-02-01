@@ -56,18 +56,25 @@
 } */
 
 #website, #project{
-  color: white !important;
   margin: 0;
   font-size: 20px !important;
 
 }
+#profile{
+  margin: 0;
+  font-size: 20px !important;
+  margin-right: 20px;
+  margin-left: 10px;
+}
 #website{
   margin-right: 10px !important;
+  color: white !important;
 }
 
 #project{
   margin-left: 10px !important;
-  margin-right: 30px !important;
+  margin-right: 20px !important;
+  color: lightblue !important;
 }
 .card-action{
   margin-bottom: 5px;

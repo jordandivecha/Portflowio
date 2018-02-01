@@ -64,7 +64,7 @@ export default withAuth(class Profile extends React.Component {
   loadProfileCards() {
     if (this.state.userposts[0] !== null){
       var userposty2 = this.state.userposts.slice(0).reverse().map(posty => (
-        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags}/>));
+        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags} email={posty.email} id={posty._id} currentuser={this.state.user._id} />));
       return userposty2;
     }
 }
@@ -73,7 +73,7 @@ export default withAuth(class Profile extends React.Component {
     if (this.state.user !== null){
     return (<div className="profileholder">
       <Header id="headerHome"/>
-      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.state.user._id}></GlobalNav>
+      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.state.user._id} email={this.state.user.email}></GlobalNav>
 
       {this.authButton()}
       <SideNavBar firstName={this.state.user.firstName} lastName={this.state.user.lastName} email={this.state.user.email} image={this.state.user.userImage} bio={this.state.user.bio} linkedin={this.state.user.linkedin} website={this.state.user.website} github={this.state.user.github} username={this.state.user.username} authenticated={this.state.authenticated} id={this.state.user._id}/>

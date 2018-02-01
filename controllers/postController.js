@@ -30,7 +30,8 @@ module.exports = {
 					tags: req.body.tags,
 					website: req.body.website,
 					project: req.body.project,
-					postImage: req.body.postImage
+					postImage: req.body.postImage,
+					email: req.body.email
 				})
     		.then(dbModel => res.json(dbModel))
     		.catch(err => res.status(422).json(err));

@@ -73,6 +73,26 @@ module.exports = {
 			.then(user => res.json(user))
 			.catch(err=> res.status(422).json(err));
 
+},
+
+follow: function (req,res){
+	console.log (req.body.currentuser);
+	console.log(req.params.userid);
+	db.User
+	.findOneAndUpdate(
+		{ '_id': ObjectId(req.body.currentuser)}
+	,
+	{$push: {'following': ObjectId(req.params.userid)}})
+	.then (res.end() ).catch(err=> res.status(422).json(err));
+},
+unfollow: function (req,res){
+	console.log (req.body.currentuser);
+	console.log(req.params.userid);
+	db.User
+	.findOneAndUpdate(
+		{ '_id': ObjectId(req.body.currentuser)},
+	{$pull: {'following': ObjectId(req.params.userid)}})
+	.then (res.end()).catch(err=> res.status(422).json(err));
 }
 
 };
