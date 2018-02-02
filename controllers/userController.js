@@ -36,7 +36,7 @@ module.exports = {
 	// },
   //
   update: function(req, res) {
-		console.log(req.body);
+		
 
     db.User.findOneAndUpdate(
 			{ '_id': ObjectId(req.params.userid)},
@@ -76,23 +76,40 @@ module.exports = {
 },
 
 follow: function (req,res){
-	console.log (req.body.currentuser);
-	console.log(req.params.userid);
+
 	db.User
 	.findOneAndUpdate(
-		{ '_id': ObjectId(req.body.currentuser)}
-	,
+		{ '_id': ObjectId(req.body.currentuser)},
 	{$push: {'following': ObjectId(req.params.userid)}})
 	.then (res.end() ).catch(err=> res.status(422).json(err));
 },
 unfollow: function (req,res){
-	console.log (req.body.currentuser);
-	console.log(req.params.userid);
+
 	db.User
 	.findOneAndUpdate(
 		{ '_id': ObjectId(req.body.currentuser)},
 	{$pull: {'following': ObjectId(req.params.userid)}})
 	.then (res.end()).catch(err=> res.status(422).json(err));
+},
+
+
+like: function (req,res){
+ console.log(req.params.postid);
+	db.User
+	.findOneAndUpdate(
+		{ '_id': ObjectId(req.body.currentuser)},
+	{$push: {'likes': ObjectId(req.params.postid)}})
+	.then (res.end() ).catch(err=> res.status(422).json(err));
+},
+
+unlike: function (req,res){
+
+	db.User
+	.findOneAndUpdate(
+		{ '_id': ObjectId(req.body.currentuser)},
+	{$pull: {'likes': ObjectId(req.params.postid)}})
+	.then (res.end()).catch(err=> res.status(422).json(err));
 }
+
 
 };

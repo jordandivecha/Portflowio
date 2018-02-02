@@ -19,5 +19,8 @@ router.route("/:userid")
 //
 // router.route("/user/saved/id")
 
+router.route("/like/:postid")
+.post(postController.like)
+.put(postController.unlike);
 
 module.exports = router;

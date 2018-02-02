@@ -12,7 +12,10 @@
 /* .userView{
 	text-align: center !important;
 } */
-
+.followbtn{
+	vertical-align: middle !important;
+	padding-bottom: 10px !important;
+}
 .user-info{
 
 font-size: 20px;
@@ -28,9 +31,10 @@ color: white;
 }
 
 .profilebtn{
-	margin: 0 auto;
+	margin: auto;
 	color: black;
 }
+
 
 
 SideNavItem{
@@ -109,4 +113,7 @@ h5{
 }
 #name{
 	font-size: 35px;
+}
+.followbtn{
+	margin: 0 auto!important;
 }

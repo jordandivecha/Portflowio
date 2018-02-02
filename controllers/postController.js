@@ -12,10 +12,10 @@ module.exports = {
   	},
 
 	findById: function(req, res) {
-		var stringy = (req.params.userid).toString()
+
 		db.Post
 				.find(
-					{creator: ObjectId(stringy)})
+					{creator: ObjectId(req.params.userid)})
 					.then(post => res.json(post))
 					.catch(err=> res.status(422).json(err));
 	},
@@ -51,4 +51,16 @@ module.exports = {
     		.then(dbModel => res.json(dbModel))
     		.catch(err => res.status(422).json(err));
   },
+	like: function (req, res){
+		db.Post
+			.findOneAndUpdate({_id: ObjectId(req.params.postid)}, {$inc:{'likeCount': 1}})
+			.then(post => res.json(post))
+			.catch(err => res.status(422).json(err));
+	},
+	unlike: function (req, res){
+		db.Post
+			.findOneAndUpdate({_id: ObjectId(req.params.postid)}, {$inc:{'likeCount': -1}})
+			.then(post=> res.json(post))
+			.catch(err => res.status(422).json(err));
+	}
 };

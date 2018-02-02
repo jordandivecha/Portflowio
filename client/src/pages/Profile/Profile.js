@@ -40,9 +40,10 @@ export default withAuth(class Profile extends React.Component {
     }
 
   componentDidUpdate(prevProps, prevState){
-      API.getPostsById(this.state.user._id).then(res => this.setState({
-      userposts: res.data
-    })).catch(err => console.log(err));
+      
+    setTimeout(() => {API.getPostsById(this.state.user._id)
+    .then(res => res.data !== this.state.posts ? this.setState({userposts: res.data}): null)
+    .catch(err=>console.log(err))}, 2000);
 
 
   }
@@ -64,7 +65,7 @@ export default withAuth(class Profile extends React.Component {
   loadProfileCards() {
     if (this.state.userposts[0] !== null){
       var userposty2 = this.state.userposts.slice(0).reverse().map(posty => (
-        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags} email={posty.email} id={posty._id} currentuser={this.state.user._id} />));
+        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags} email={posty.email} id={posty._id} currentuser={this.state.user._id} likeCount={posty.likeCount}likes= {this.state.user.likes}/>));
       return userposty2;
     }
 }
