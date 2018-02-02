@@ -38,6 +38,11 @@ export default withAuth(class Home extends Component {
     this.checkAuthentication();
 
   }
+  componentDidMount(){
+    setTimeout(()=>{API.getAllPosts()
+    .then(res => this.setState({posts: res.data}))
+    .catch(err=>console.log(err))}, 1000);
+  }
 
   async checkAuthentication() {
     const authenticated = await this.props.auth.isAuthenticated();
@@ -109,15 +114,15 @@ console.log(this.state.user._id);
 }
 
 }
-
 }
 
-componentDidUpdate(){
 
-  API.getAllPosts()
-  .then(res => this.setState({posts: res.data}))
-  .catch(err=>console.log(err));
+componentDidUpdate(prevProps, prevState){
 
+
+  setTimeout(() => {API.getAllPosts()
+  .then(res => res.data !== this.state.posts ? this.setState({posts: res.data}): null)
+  .catch(err=>console.log(err))}, 2000);
 
 }
 
@@ -135,6 +140,8 @@ loadallcards(){
     email={post.email}
     id={post._id}
     currentuser={this.state.user._id}
+    likes={this.state.user.likes}
+    likeCount= {post.likeCount}
   /></div>)
 );
 return posts;

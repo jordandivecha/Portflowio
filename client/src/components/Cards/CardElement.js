@@ -37,7 +37,8 @@ const PortflowioCard = props => (
 							title = "Project"
 							href = {props.project}/>
 				<a id='profile' href={"/user/"+props.email}>Profile</a>
-					<LikeButton className = "likebutton" id={props.id} currentuser= {props.currentuser}/>
+					<LikeButton className = "likebutton" id={props.id} currentuser= {props.currentuser}
+						liked={props.likes.includes(props.id)? true:false } likeCount={props.likeCount}/>
 				</div>
 
 			</div>

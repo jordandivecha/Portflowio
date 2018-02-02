@@ -33,18 +33,28 @@ export default withAuth( class ProfileView extends React.Component {
     API.userFindByEmail(email).then(res => {
       this.setState({usercurrent: res.data});
     }).catch(err => console.log(err));
+
+
   }
 
+componentDidMount(){
 
+}
   componentDidUpdate(prevProps, prevState){
-    if(this.state.user){
+    var currentstate= this.state;
+    if((this.state.user && this.state.usercurrent.following) && prevState !== currentstate){
       API.getPostsById(this.state.user._id).then(res => this.setState({
       userposts: res.data
     })).catch(err => console.log(err));
-
-
   }
+
+    if (this.state.usercurrent.following && (prevState.usercurrent.following !== currentstate.usercurrent.following)){
+    this.state.usercurrent.following.includes(this.state.user._id)?
+     this.setState({following: true}) : this.setState({following: false});
+
 }
+  }
+
 
 
 
@@ -72,7 +82,7 @@ follow(userid){
   loadProfileCards() {
     if (this.state.userposts[0] !== null){
       var userposty2 = this.state.userposts.slice(0).reverse().map(posty => (
-        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags} id={posty._id} currentuser={this.state.usercurrent._id}/>));
+        <PortflowioCard key={posty.postImage} postImage={posty.postImage} website={posty.website} creator={posty.creator} project={posty.project} description={posty.description} title={posty.title} tags={posty.tags} email={posty.email} id={posty._id} currentuser={this.state.usercurrent._id} likeCount={posty.likeCount} likes={this.state.usercurrent.likes}/>));
       return userposty2;
     }
 }
@@ -81,7 +91,7 @@ follow(userid){
     if (this.state.user !== null){
     return (<div className="profileholder">
       <Header id="headerHome"/>
-      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.state.usercurrent._id}></GlobalNav>
+      <GlobalNav button={this.authButton} authenticated={this.state.authenticated} creator={this.state.usercurrent._id} email={this.state.usercurrent.email}></GlobalNav>
 
       {this.authButton()}
       <SideNavBar firstName={this.state.user.firstName} lastName={this.state.user.lastName} email={this.state.user.email} image={this.state.user.userImage} bio={this.state.user.bio} linkedin={this.state.user.linkedin} website={this.state.user.website} github={this.state.user.github} username={this.state.user.username} authenticated={this.state.authenticated} id={this.state.user._id} other={true} follow={this.follow.bind(this)} following={this.state.following}/>

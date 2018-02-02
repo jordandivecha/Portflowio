@@ -47,6 +47,21 @@ export default {
 
     return axios.delete("/user/"+userid, {data: currentuser});
   },
-  liked: function (id){}
+  like: function (postid, currentuser){
+
+    return axios.post('/api/profile/like/'+ postid, currentuser);
+  },
+  unlike: function(postid, currentuser){
+
+    return axios.delete('/api/profile/like/'+ postid, {data: currentuser});
+  },
+  addlike: function(postid){
+
+    return axios.post('/api/post/like/'+ postid);
+  },
+  removelike: function(postid){
+
+    return axios.put('/api/post/like/'+ postid);
+  }
 
 };

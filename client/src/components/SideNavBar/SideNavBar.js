@@ -32,9 +32,9 @@ class SideNavBar extends React.Component {
 				 	<p id="name">{this.props.firstName} {this.props.lastName}</p>
 					<p id="username">{this.props.username}</p>
 					</div>
-					<div className= "center">
-				{this.props.other == true ?
-					<Follow follow={this.props.follow.bind(this)} id= {this.props.id} following={this.props.following}/>
+					<div>
+				{this.props.other == true ? (<div className="center">
+					<Follow  follow={this.props.follow.bind(this)} id= {this.props.id} following={this.props.following}/> </div>)
 					:<ModalProfile className= "profilebtn"
 					firstName= {this.props.firstName}
           lastName={this.props.lastName}
