@@ -1,11 +1,13 @@
 import React from "react";
 import API from "../../utils/API.js";
+
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       liked: props.liked
     };
+  
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -19,6 +21,7 @@ class LikeButton extends React.Component {
   handleClick(postid) {
 
     this.likeunlike(postid);
+
 
   }
 

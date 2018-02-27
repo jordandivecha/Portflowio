@@ -46,6 +46,6 @@ const PortflowioCard = props => (
 
 
 	);
-//description above is not showing up
+
 
 export default PortflowioCard;
