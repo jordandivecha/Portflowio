@@ -18,7 +18,7 @@ const config = {
   issuer: 'https://dev-395184.oktapreview.com/oauth2/default',
   client_id: "0oadot4zoxzmT4EZh0h7",
   scope: 'openid profile email',
-  redirect_uri: 'https://portflow.io/callback'
+  redirect_uri: 'https://portflow.io/implicit/callback'
 };
 
 class App extends Component {

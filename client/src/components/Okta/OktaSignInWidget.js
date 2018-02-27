@@ -11,7 +11,7 @@ export default class OktaSignInWidget extends Component {
     this.widget = new OktaSignIn({
       baseUrl: this.props.baseUrl,
       clientId: '0oadot4zoxzmT4EZh0h7',
-      redirectUri: 'https://portflow.io/callback',
+      redirectUri: 'https://portflow.io/implicit/callback',
 
       idps: [
         {type: 'GOOGLE', id: '0oadowjhgzcK6qDAv0h7'},
