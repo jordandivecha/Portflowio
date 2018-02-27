@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8080;
+// const server = require('http').Server(app);
+// var io = require('socket.io')(server);
 
 
 
@@ -28,6 +30,12 @@ mongoose.connect(
 
 );
 
+// io.on('connection', (client)=> {
+//   client.on('likenotify', (notifylike) {
+//   console.log('client likes', notifylike);
+//   client.emit('liked')});
+//
+//   });
 
 // Start the API server
 app.listen(PORT, () =>

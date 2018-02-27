@@ -1,4 +1,6 @@
 import axios from "axios";
+import openSocket from 'socket.io-client';
+const socket = openSocket('http://localhost:8080');
 
 export default {
 
@@ -62,6 +64,10 @@ export default {
   removelike: function(postid){
 
     return axios.put('/api/post/like/'+ postid);
+  },
+  likenotify: function(like, cb){
+    socket.on('like', like=> cb(null, 'like'));
+    socket.emit('likenotify', 1000);
   }
 
 };
